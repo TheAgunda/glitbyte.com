@@ -1,16 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Syne, Titillium_Web, Nunito_Sans, Rajdhani } from "next/font/google";
+import "@/styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const rajdhani = Rajdhani({
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-rajdhani",
+  subsets: ["latin"],
+});
+const titilliumWeb = Titillium_Web({
+  weight: ["200", "300", "400", "600", "700", "900"],
+  variable: "--font-titillium-web",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sync = Syne({
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sync",
+  subsets: ["latin"],
+})
+const nunito = Nunito_Sans({
+  weight: ["200", "300", "400", "600", "700", "900"],
+  variable: "--font-nunito-sans",
   subsets: ["latin"],
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,10 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${titilliumWeb.variable} ${sync.variable} ${nunito.variable}  ${rajdhani.variable}antialiased`}
       >
         {children}
       </body>
-    </html>
+    </html >
   );
 }

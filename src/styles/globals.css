@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  --font-nunito-sans: "Nunito Sans", sans-serif;
+  --font-titillium-web: "Titillium Web", sans-serif;
+}
+
+@theme {
+  --color-primary: #F05742;
+  --color-secondary: #888888;
+  --color-brand-1: #121212;
+  --color-brand-2: rgba(250, 249, 246, 0.9);
+
+  --color-brand-3: rgba(18, 18, 18, 0.9);
+  --color-brand-4: rgba(64, 64, 64, 0.5);
+  --color-brand-5: rgb(250, 249, 246);
+  --color-brand-6: rgba(41, 41, 41, 0.5);
+  --color-brand-7: #1e1e1d;
+  --color-brand-8: #151b23;
+  --color-brand-9: #9198a1;
+  --color-brand-10: #0d1117;
+  --color-brand-11: #4493f8;
+  --color-yellow: #FFCC00;
+  --color-cod-gray: #1A1919;
+  --color-cod-gray-2: #111111;
+  --color-mine-shaft: #303030;
+  --color-gray: #828282;
+  --color-sunset-orange: #FC5844;
+  --color-web-orange: #FFA600;
+  --color-silver-chalice: #AAAAAA;
+  --color-green-haze: #009149;
+  --font-sync: var(--font-sync);
+  --font-nunito: var(--font-nunito-sans);
+  --font-rajdhani: var(--font-rajdhani);
+  --font-titillium: var(--font-titillium-web);
+
+}
+
+:root {
+  --background: #ffffff;
+  /* --foreground: #171717; */
+  --foreground: var(--color-brand-1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@utility footer {
+  @apply flex flex-col bg-brand-10
+}
+
+@utility header {
+  @apply flex p-3 rounded-lg backdrop-blur-2xl justify-between border border-mine-shaft items-center bg-brand-6
+}
+
+@utility nav-link {
+  @apply text-sm font-medium text-brand-2 px-3 py-2 font-titillium
+}
+
+@utility footer-link {
+  @apply flex text-brand-9 hover:text-brand-11 text-sm font-normal font-titillium
+}
+
+
+@utility h1 {
+  @apply font-bold font-sync text-6xl
+}
+
+@utility paragraph {
+  @apply text-xl font-nunito
+}
+
+@utility h2 {
+  @apply font-bold font-sync text-4xl
+}
+
+@utility h4 {
+  @apply font-semibold font-sync text-2xl
+}
+
+@utility service-card {
+  @apply rounded-[14px] bg-[#ffffff0a] p-5 border border-[#e3e3fe14]
+}
+
+@utility service-heading {
+  @apply text-2xl font-semibold mb-5 font-nunito
+}
+
+@utility service-content {
+  @apply text-base text-secondary mb-5
+}
+
+@utility service-feature {
+  @apply text-sm text-[#9095a4] flex flex-col gap-1 ps-2
+}
+
+/* p-5 px-2.5 py-2 */
+@utility client-review {
+  @apply text-sm p-5 bg-[#ffffff14] rounded-[14px] border border-[#e3e3fe14] w-100
+}
+
+@utility client-review-title {
+  @apply text-sm text-[#9095a4]
+}
+
+/* */
+
+
+/* rgba(255, 255, 255, 0.04)  #ffffff0a */
+
+
+/*
+extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        "yellow": "#FFCC00",
+        "cod-gray": "#1A1919",
+        "cod-gray-2": "#111111",
+        "mine-shaft": "#303030",
+        "gray": "#828282",
+        "sunset-orange": "#FC5844",
+        "web-orange": "#FFA600",
+        "silver-chalice": "#AAAAAA",
+        "green-haze": "#009149"
+      },
+      fontFamily: {
+        "sync": "var(--font-sync)",
+        "nunito": "var(--font-nunito-sans)",
+        "rajdhani": "var(--font-rajdhani)",
+        "titillium": "var(--font-titillium-web)"
+      }
+    },
+
+    */
