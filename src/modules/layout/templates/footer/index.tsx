@@ -1,11 +1,138 @@
+import { APP } from "@/lib/constants";
+import Logo from "@/modules/common/components/logo";
 const Footer: React.FC<{}> = () => {
     return (
         <>
             <div className="footer" >
+                {/* <div className="flex flex-col gap-1">
+                    <div className="flex gap-1">
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/20">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/60">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-ful">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/20">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/50">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/60">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/80">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/20">
+                        </div>
+                    </div>
+                    <div className="flex gap-1">
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/20">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/60">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/60">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/20">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full ">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/60">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                    </div>
+                    <div className="flex gap-1">
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/30">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/40">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/20">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                    </div>
+                    <div className="flex gap-1">
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-primary/20">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-[#0C0C0E]">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-[#0C0C0E]">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full">
+                        </div>
+                        <div className="w-4.5 h-4.5 rounded-full bg-[#242424]">
+                        </div>
+                    </div>
+                </div> */}
                 <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
                         <div className="col-span-full mb-10 lg:col-span-2 lg:mb-0">
-                            <a href="https://pagedone.io/" className="flex justify-center lg:justify-start">
+                            <div>
+                                <Logo />
+                            </div>
+                            {/* <a href="https://pagedone.io/" className="flex justify-center lg:justify-start">
                                 <svg className="w-40 h-8" viewBox="0 0 164 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M47 24.7231V7H54.4171C54.5916 7 54.816 7.00821 55.0903 7.02462C55.3645 7.03282 55.618 7.05744 55.8507 7.09846C56.8895 7.25436 57.7455 7.59487 58.4186 8.12C59.1001 8.64513 59.6029 9.30974 59.927 10.1138C60.2594 10.9097 60.4256 11.7959 60.4256 12.7723C60.4256 13.7405 60.2594 14.6267 59.927 15.4308C59.5945 16.2267 59.0876 16.8872 58.4061 17.4123C57.733 17.9374 56.8812 18.2779 55.8507 18.4338C55.618 18.4667 55.3604 18.4913 55.0778 18.5077C54.8035 18.5241 54.5833 18.5323 54.4171 18.5323H50.0042V24.7231H47ZM50.0042 15.7631H54.2925C54.4587 15.7631 54.6457 15.7549 54.8534 15.7385C55.0612 15.7221 55.2523 15.6892 55.4268 15.64C55.9255 15.5169 56.3161 15.2995 56.5986 14.9877C56.8895 14.6759 57.0931 14.3231 57.2094 13.9292C57.3341 13.5354 57.3964 13.1497 57.3964 12.7723C57.3964 12.3949 57.3341 12.0092 57.2094 11.6154C57.0931 11.2133 56.8895 10.8564 56.5986 10.5446C56.3161 10.2328 55.9255 10.0154 55.4268 9.89231C55.2523 9.84308 55.0612 9.81436 54.8534 9.80615C54.6457 9.78974 54.4587 9.78154 54.2925 9.78154H50.0042V15.7631Z" fill="currentColor" />
                                     <path d="M66.0975 25.0923C65.1252 25.0923 64.3024 24.9118 63.6293 24.5508C62.9561 24.1815 62.445 23.6933 62.096 23.0862C61.7553 22.479 61.5849 21.8103 61.5849 21.08C61.5849 20.44 61.6929 19.8656 61.909 19.3569C62.1251 18.84 62.4575 18.3969 62.9063 18.0277C63.355 17.6503 63.9368 17.3426 64.6515 17.1046C65.1917 16.9323 65.8233 16.7764 66.5463 16.6369C67.2776 16.4974 68.0671 16.3703 68.9148 16.2554C69.7707 16.1323 70.6641 16.001 71.5949 15.8615L70.5228 16.4646C70.5311 15.5456 70.3234 14.8687 69.8995 14.4338C69.4757 13.999 68.761 13.7815 67.7554 13.7815C67.1488 13.7815 66.5629 13.921 65.9978 14.2C65.4327 14.479 65.0379 14.959 64.8135 15.64L62.0711 14.7908C62.4035 13.6667 63.0351 12.7641 63.9659 12.0831C64.9049 11.4021 66.1681 11.0615 67.7554 11.0615C68.9522 11.0615 70.0034 11.2544 70.9093 11.64C71.8234 12.0256 72.5007 12.6574 72.9412 13.5354C73.1822 14.0031 73.3276 14.4831 73.3775 14.9754C73.4274 15.4595 73.4523 15.9887 73.4523 16.5631V24.7231H70.822V21.8431L71.2583 22.3108C70.6517 23.2708 69.9411 23.9764 69.1267 24.4277C68.3206 24.8708 67.3108 25.0923 66.0975 25.0923ZM66.6959 22.7292C67.3773 22.7292 67.9591 22.6103 68.4411 22.3723C68.9231 22.1344 69.3054 21.8431 69.5879 21.4985C69.8788 21.1538 70.0741 20.8297 70.1738 20.5262C70.3317 20.1487 70.419 19.7179 70.4356 19.2338C70.4605 18.7415 70.473 18.3436 70.473 18.04L71.3954 18.3108C70.4896 18.4503 69.7126 18.5733 69.0643 18.68C68.4161 18.7867 67.8593 18.8892 67.3939 18.9877C66.9286 19.0779 66.5172 19.1805 66.1598 19.2954C65.8108 19.4185 65.5158 19.5621 65.2748 19.7262C65.0338 19.8903 64.8468 20.079 64.7138 20.2923C64.5891 20.5056 64.5268 20.7559 64.5268 21.0431C64.5268 21.3713 64.6099 21.6626 64.7761 21.9169C64.9423 22.1631 65.1833 22.36 65.4991 22.5077C65.8233 22.6554 66.2222 22.7292 66.6959 22.7292Z" fill="currentColor" />
@@ -16,25 +143,25 @@ const Footer: React.FC<{}> = () => {
                                     <path d="M145.923 24.7231V18.3231C145.923 17.9046 145.894 17.441 145.836 16.9323C145.778 16.4236 145.64 15.9354 145.424 15.4677C145.217 14.9918 144.901 14.6021 144.477 14.2985C144.061 13.9949 143.496 13.8431 142.782 13.8431C142.399 13.8431 142.021 13.9046 141.647 14.0277C141.273 14.1508 140.933 14.3641 140.625 14.6677C140.326 14.9631 140.085 15.3733 139.902 15.8985C139.719 16.4154 139.628 17.08 139.628 17.8923L137.845 17.1415C137.845 16.0092 138.065 14.9836 138.506 14.0646C138.955 13.1456 139.611 12.4154 140.475 11.8738C141.34 11.3241 142.403 11.0492 143.667 11.0492C144.664 11.0492 145.487 11.2133 146.135 11.5415C146.783 11.8697 147.298 12.2882 147.681 12.7969C148.063 13.3056 148.345 13.8472 148.528 14.4215C148.711 14.9959 148.827 15.5415 148.877 16.0585C148.936 16.5672 148.965 16.9815 148.965 17.3015V24.7231H145.923ZM136.586 24.7231V11.4308H139.266V15.5538H139.628V24.7231H136.586Z" fill="currentColor" />
                                     <path d="M157.87 25.0923C156.507 25.0923 155.31 24.801 154.28 24.2185C153.249 23.6359 152.443 22.8277 151.861 21.7938C151.288 20.76 151.001 19.5703 151.001 18.2246C151.001 16.7723 151.284 15.5128 151.849 14.4462C152.414 13.3713 153.199 12.5385 154.205 11.9477C155.21 11.3569 156.374 11.0615 157.695 11.0615C159.091 11.0615 160.276 11.3856 161.248 12.0338C162.229 12.6738 162.956 13.5805 163.43 14.7538C163.903 15.9272 164.082 17.3097 163.966 18.9015H160.986V17.8185C160.978 16.3744 160.72 15.32 160.213 14.6554C159.706 13.9908 158.909 13.6585 157.82 13.6585C156.59 13.6585 155.676 14.0359 155.078 14.7908C154.479 15.5374 154.18 16.6328 154.18 18.0769C154.18 19.4226 154.479 20.4646 155.078 21.2031C155.676 21.9415 156.548 22.3108 157.695 22.3108C158.435 22.3108 159.071 22.1508 159.603 21.8308C160.143 21.5026 160.558 21.0308 160.849 20.4154L163.816 21.3015C163.301 22.4995 162.503 23.4308 161.423 24.0954C160.351 24.76 159.166 25.0923 157.87 25.0923ZM153.233 18.9015V16.6615H162.495V18.9015H153.233Z" fill="currentColor" />
                                     <path d="M24.5473 11.8941C25.1905 12.5063 25.2068 13.5149 24.5837 14.1468L18.7585 20.054C18.1354 20.686 17.1087 20.702 16.4654 20.0898C15.8222 19.4776 15.8059 18.469 16.429 17.8371L22.2542 11.9299C22.8773 11.2979 23.904 11.2819 24.5473 11.8941Z" fill="url(#paint0_linear_9129_4680)" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.54673C0 2.03564 2.07211 0 4.62819 0H21.5399V0.00124069C28.9908 0.0998525 35 6.06429 35 13.4075C35 20.8123 28.8897 26.8151 21.3523 26.8151C18.6648 26.8151 16.1587 26.052 14.0463 24.7342L6.58815 31.9057C4.13431 34.2652 0 32.5573 0 29.1841V4.54673ZM11.5194 22.7055C9.15709 20.295 7.70452 17.0179 7.70452 13.4075C7.70452 12.5277 8.43056 11.8144 9.32619 11.8144C10.2218 11.8144 10.9479 12.5277 10.9479 13.4075C10.9479 19.0526 15.6061 23.6288 21.3523 23.6288C27.0985 23.6288 31.7567 19.0526 31.7567 13.4075C31.7567 7.76248 27.0985 3.18626 21.3523 3.18626H4.62819C3.86336 3.18626 3.24334 3.79536 3.24334 4.54673V29.1841C3.24334 29.7351 3.91866 30.014 4.31948 29.6286L11.5194 22.7055Z" fill="url(#paint1_linear_9129_4680)" />
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M0 4.54673C0 2.03564 2.07211 0 4.62819 0H21.5399V0.00124069C28.9908 0.0998525 35 6.06429 35 13.4075C35 20.8123 28.8897 26.8151 21.3523 26.8151C18.6648 26.8151 16.1587 26.052 14.0463 24.7342L6.58815 31.9057C4.13431 34.2652 0 32.5573 0 29.1841V4.54673ZM11.5194 22.7055C9.15709 20.295 7.70452 17.0179 7.70452 13.4075C7.70452 12.5277 8.43056 11.8144 9.32619 11.8144C10.2218 11.8144 10.9479 12.5277 10.9479 13.4075C10.9479 19.0526 15.6061 23.6288 21.3523 23.6288C27.0985 23.6288 31.7567 19.0526 31.7567 13.4075C31.7567 7.76248 27.0985 3.18626 21.3523 3.18626H4.62819C3.86336 3.18626 3.24334 3.79536 3.24334 4.54673V29.1841C3.24334 29.7351 3.91866 30.014 4.31948 29.6286L11.5194 22.7055Z" fill="url(#paint1_linear_9129_4680)" />
                                     <defs>
                                         <linearGradient id="paint0_linear_9129_4680" x1="35" y1="1.89063" x2="1.11152" y2="33.4573" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#7C3AED" />
-                                            <stop offset="0.993738" stop-color="#4F46E5" />
+                                            <stop stopColor="#7C3AED" />
+                                            <stop offset="0.993738" stopColor="#4F46E5" />
                                         </linearGradient>
                                         <linearGradient id="paint1_linear_9129_4680" x1="35" y1="1.89063" x2="1.11152" y2="33.4573" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#7C3AED" />
-                                            <stop offset="0.993738" stop-color="#4F46E5" />
+                                            <stop stopColor="#7C3AED" />
+                                            <stop offset="0.993738" stopColor="#4F46E5" />
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                            </a>
-                            <p className="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">
+                            </a> */}
+                            <p className="py-4 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">
                                 Passionately Built. Professionally Delivered.
                             </p>
-                            <a href="javascript:;" className="py-2.5 px-5 h-9 block w-fit bg-indigo-600 rounded-full shadow-sm text-xs text-white mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
+                            {/* <a href="javascript:;" className="py-2.5 px-5 h-9 block w-fit bg-indigo-600 rounded-full shadow-sm text-xs text-white mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
                                 Contact us
-                            </a>
+                            </a> */}
                         </div>
 
                         <div className="lg:mx-auto text-left ">
@@ -82,7 +209,7 @@ const Footer: React.FC<{}> = () => {
                     <div className="container px-4 py-6 sm:px-10 mx-auto">
                         <div className="flex justify-between flex-col sm:flex-row">
                             <div className="flex gap-4">
-                                <p className="text-xs font-normal text-brand-9">© 2025 PP, Inc.</p>
+                                <p className="text-xs font-normal text-brand-9">© 2025 {APP.NAME}</p>
                                 <a className="text-xs font-normal text-brand-9">Terms of Service</a>
                                 <a className="text-xs font-normal text-brand-9">Privacy Policy</a>
                             </div>

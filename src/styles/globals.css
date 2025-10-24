@@ -3,6 +3,7 @@
 :root {
   --font-nunito-sans: "Nunito Sans", sans-serif;
   --font-titillium-web: "Titillium Web", sans-serif;
+  --font-gugi: "Gugi", sans-serif;
 }
 
 @theme {
@@ -29,10 +30,12 @@
   --color-web-orange: #FFA600;
   --color-silver-chalice: #AAAAAA;
   --color-green-haze: #009149;
+  --color--orange-500: #f25325;
   --font-sync: var(--font-sync);
   --font-nunito: var(--font-nunito-sans);
   --font-rajdhani: var(--font-rajdhani);
   --font-titillium: var(--font-titillium-web);
+
 
 }
 
@@ -41,6 +44,10 @@
   /* --foreground: #171717; */
   --foreground: var(--color-brand-1);
 }
+
+/* html * {
+  cursor: none
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -53,6 +60,10 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@utility logo {
+  @apply flex text-primary font-bold text-3xl tracking-wider
 }
 
 @utility footer {
@@ -81,28 +92,44 @@ body {
 }
 
 @utility h2 {
-  @apply font-bold font-sync text-4xl
+  @apply font-bold font-sync text-5xl
 }
 
 @utility h4 {
   @apply font-semibold font-sync text-2xl
 }
 
-@utility service-card {
-  @apply rounded-[14px] bg-[#ffffff0a] p-5 border border-[#e3e3fe14]
+@utility h5 {
+  @apply font-semibold font-sync text-xl
 }
 
+@utility h6 {
+  @apply font-bold font-sync text-lg
+}
+
+@utility service-card {
+  @apply flex flex-col justify-center items-center rounded-[14px] p-5 border border-[#e3e3fe14] bg-white/10 hover:translate-y-1 transition-all duration-700 opacity-90 hover:opacity-100
+}
+
+/* text-center */
+/* bg-[#ffffff0a] */
+
 @utility service-heading {
-  @apply text-2xl font-semibold mb-5 font-nunito
+  @apply text-xl font-semibold mb-2 font-nunito
 }
 
 @utility service-content {
-  @apply text-base text-secondary mb-5
+  @apply text-sm text-secondary tracking-wider font-normal font-nunito text-center
+}
+
+@utility service-feature-list {
+  @apply flex flex-wrap gap-1 ps-2 justify-center items-center
 }
 
 @utility service-feature {
-  @apply text-sm text-[#9095a4] flex flex-col gap-1 ps-2
+  @apply text-sm text-[#9095a4] bg-white/20 px-2.5 py-1 rounded-full
 }
+
 
 /* p-5 px-2.5 py-2 */
 @utility client-review {
@@ -113,7 +140,281 @@ body {
   @apply text-sm text-[#9095a4]
 }
 
-/* */
+@utility contact-form-input {
+  @apply w-full px-5 py-3 mt-2 text-white placeholder-white/60 bg-white/10 border border-white/20 rounded-lg focus:border-primary focus:ring-primary/50 focus:outline-none focus:ring
+}
+
+
+/* feature-card */
+@utility feature-card {
+  @apply rounded-3xl bg-[#121212] overflow-hidden flex flex-col h-full
+}
+
+@utility feature-detail-div {
+  @apply p-6 flex flex-col gap-6 justify-start items-start
+}
+
+.feature-detail-div.height {
+  justify-content: space-between !important;
+  height: 100%;
+}
+
+@utility blog-card {
+  @apply flex flex-col gap-6 no-underline;
+}
+
+@utility h5-heading {
+  @apply font-normal text-2xl tracking-[1.2px] text-white my-0
+}
+
+
+
+@utility blog-slider-wrapper {
+  @apply bg-[#0000] mt-20 h-auto
+}
+
+@utility ibm-plex-mono-font {
+  @apply uppercase font-medium font-nunito
+}
+
+@utility blog-category-div {
+  @apply flex justify-start items-center
+}
+
+@utility blog-dot {
+  @apply bg-[#fff3] rounded-[100px] w-[5px] h-[5px]
+}
+
+@utility orange-text {
+  @apply text-primary no-underline
+}
+
+@utility blog-category-div {
+  @apply flex justify-start items-center gap-2 font-nunito
+}
+
+
+
+@utility blog-thumb-image-div {
+  @apply rounded-3xl overflow-hidden;
+}
+
+@utility blog-thumb-image {
+  @apply w-full
+}
+
+@utility feature-heading-div {
+  @apply flex flex-col gap-3
+}
+
+/* @utility feature-icon {} */
+
+@utility large-text {
+  @apply text-white text-xl font-semibold
+}
+
+
+@utility feature-paragraph {
+  @apply tracking-[1.2px] text-sm font-normal text-white/70
+}
+
+@utility feature-image-div {
+  @apply h-full
+}
+
+@utility feature-image {
+  @apply object-cover h-full
+}
+
+.feature-icon-div {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.feature-tool-icon-02 {
+  z-index: 3;
+  position: absolute;
+  inset: 50% 0% 0% 50%;
+  transform: translate(-100%, -127%);
+}
+
+.feature-tool-icon-01 {
+  z-index: 4;
+  position: absolute;
+  inset: 50% 0% 0% 50%;
+  transform: translate(-50%, -30%);
+}
+
+.feature-tool-icon-03 {
+  z-index: 5;
+  position: absolute;
+  inset: 50% 0% 50% 50%;
+  transform: translate(-145%, -10%);
+}
+
+.feature-tool-icon-04 {
+  position: absolute;
+  inset: 50% 0% 0% 50%;
+  transform: rotate(-51deg) translate(114%, -6%);
+}
+
+.feature-tool-icon-05 {
+  position: absolute;
+  inset: 50% 0% 0% 50%;
+  transform: translate(84%, 40%);
+}
+
+/* compliance card ********************/
+
+@utility compliance-card {
+  @apply flex justify-start items-center gap-3
+}
+
+@utility large-paragraph {
+  @apply text-lg font-normal text-[#ffffffb3] mb-0
+}
+
+.large-paragraph.faq-heading {
+  color: white;
+}
+
+.large-paragraph.faq-ans {
+  max-width: 415px;
+}
+
+@utility small-paragraph {
+  @apply text-sm font-normal tracking-[1.2px] mb-0 text-[#ffffffb3]
+}
+
+.small-paragraph.feature-paragraph {
+  max-width: 235px;
+}
+
+@utility compliance-icon-div {
+  @apply rounded-2xl flex justify-center items-center h-16 w-16
+}
+
+.compliance-icon-div._01 {
+  background-color: #011b20;
+}
+
+.compliance-icon-div._02 {
+  background-color: #200401;
+}
+
+.compliance-icon-div._03 {
+  background-color: #012003;
+}
+
+.compliance-icon-div._04 {
+  background-color: #201601;
+}
+
+/* max-w-[195px] */
+@utility compliance-detail-div {
+  @apply flex flex-col gap-2
+}
+
+@utility accordion {
+  @apply overflow-hidden block w-full mb-1.5 border-b border-[#ffffff1a] cursor-pointer
+}
+
+@utility dropdown {
+  @apply text-left z-[900] mx-auto inline-block relative
+}
+
+
+
+/* -pt-2 */
+@utility accordion-list {
+  @apply border-b-[5px] border-primary bg-black static pb-6 pr-6 pl-15 pt-2
+}
+
+@utility dropdown-list {
+  @apply bg-[#ddd] min-w-full hidden absolute
+}
+
+.dropdown-list.open {
+  display: block;
+}
+
+@utility faq-icon-div {
+  @apply border rounded-[100px] flex justify-center items-center w-9 h-9 transition-all duration-500
+}
+
+
+@utility accordion-toggle {
+  @apply flex items-center justify-start gap-6 h-[70px] w-full py-6 pr-6
+}
+
+
+@utility our-work-tab-wrapper {
+  @apply border-t border-[#ffffff1a] mt-20 flex items-start
+}
+
+@utility our-work-sticky-tab-menu {
+  @apply sticky top-20 flex pt-10 mr-4 w-[32%]
+}
+
+@utility our-work-tab-card {
+  @apply flex gap-6
+}
+
+@utility work-brand-icon {
+  @apply rounded-[100px] overflow-hidden
+}
+
+@utility our-work-heading-div {
+  @apply flex flex-col gap-3
+}
+
+/* grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    flex-flow: column;
+    display: flex
+; */
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 540px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1320;
+  }
+}
+
 
 
 /* rgba(255, 255, 255, 0.04)  #ffffff0a */
@@ -143,3 +444,42 @@ extend: {
     },
 
     */
+
+
+/****************************** Swiper  ******************************/
+@utility swiper {
+  @apply h-full w-full
+}
+
+@utility slider-arrow {
+  @apply bg-[#fff3] rounded-2xl flex items-center justify-center w-12.5 h-12.5 hover:bg-white hover:text-black/90 text-white/60 cursor-pointer bg-white/20
+}
+
+.service-pagination {
+  width: 100% !important;
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(255 255 255 / 50%);
+  border-radius: 50%;
+  margin: 0 3px;
+  display: inline-block;
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.swiper-bullet.swiper-bullet-active {
+  width: 24px;
+  border-radius: 100px !important;
+  height: 8px;
+  background: rgb(255 255 255 / 70%);
+  opacity: 1;
+  transform: scale(1.2);
+}
