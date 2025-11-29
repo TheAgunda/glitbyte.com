@@ -6,7 +6,60 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
+
+export const breakpoints = {
+    // When window width is >= 320px
+    320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+    },
+    // When window width is >= 480px
+    480: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+    },
+    // When window width is >= 768px
+    768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+    },
+    // When window width is >= 1024px
+    1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+    },
+    // // When window width is >= 1440px
+    // 1440: {
+    //     slidesPerView: 5,
+    //     spaceBetween: 40,
+    // },
+}
+
+const PrevSliderButton: React.FC<{
+    onClick: React.MouseEventHandler<HTMLButtonElement> | undefined
+}> = ({ onClick }) => {
+    return (
+        <button type='button' className='slider-arrow' onClick={onClick}>
+            <svg className='rotate-180' width="29" height="29" viewBox="0 0 29 29" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.1653 15.5102L6.99313 15.5102L6.99313 13.5105L19.1645 13.5098L13.8012 8.14642L15.2154 6.73221L22.9935 14.5104L15.2154 22.2886L13.8011 20.8743L19.1653 15.5102Z" fill="" />
+            </svg>
+        </button>
+    )
+}
+
+const NextSliderButton: React.FC<{
+    onClick: React.MouseEventHandler<HTMLButtonElement> | undefined
+}> = ({ onClick }) => {
+    return (
+        <button className='slider-arrow' onClick={onClick}>
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.1653 15.5102L6.99313 15.5102L6.99313 13.5105L19.1645 13.5098L13.8012 8.14642L15.2154 6.73221L22.9935 14.5104L15.2154 22.2886L13.8011 20.8743L19.1653 15.5102Z" fill="" />
+            </svg>
+        </button>
+    )
+}
+
 const Services: React.FC<{}> = () => {
     const swiperRef = useRef<SwiperType | null>(null);
     const services = [
@@ -89,17 +142,9 @@ const Services: React.FC<{}> = () => {
                         </h2>
                         <p className="text-secondary text-base max-w-3xl">We deliver a full range of digital solutions, from mobile and web development to custom software and desktop applications, built with modern technologies for performance, scalability, and security.</p>
                     </div>
-                    <div className='flex gap-2'>
-                        <button className='slider-arrow' onClick={() => swiperRef?.current?.slidePrev()}>
-                            <svg className='rotate-180' width="29" height="29" viewBox="0 0 29 29" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19.1653 15.5102L6.99313 15.5102L6.99313 13.5105L19.1645 13.5098L13.8012 8.14642L15.2154 6.73221L22.9935 14.5104L15.2154 22.2886L13.8011 20.8743L19.1653 15.5102Z" fill="" />
-                            </svg>
-                        </button>
-                        <button className='slider-arrow' onClick={() => swiperRef?.current?.slideNext()}>
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19.1653 15.5102L6.99313 15.5102L6.99313 13.5105L19.1645 13.5098L13.8012 8.14642L15.2154 6.73221L22.9935 14.5104L15.2154 22.2886L13.8011 20.8743L19.1653 15.5102Z" fill="" />
-                            </svg>
-                        </button>
+                    <div className='hidden sm:flex gap-2'>
+                        <PrevSliderButton onClick={() => swiperRef?.current?.slidePrev()} />
+                        <NextSliderButton onClick={() => swiperRef?.current?.slideNext()} />
                     </div>
                 </div>
                 <Swiper
@@ -130,6 +175,7 @@ const Services: React.FC<{}> = () => {
                     style={{
                         transitionTimingFunction: "ease-in-out", // smooth easing
                     }}
+                    breakpoints={breakpoints}
                 >
                     {
                         services && services.map((data, index) => {
@@ -158,8 +204,11 @@ const Services: React.FC<{}> = () => {
                         })
                     }
                     <div className="service-pagination" />
+                    <div className='md:hidden flex gap-2 justify-center items-center mt-2'>
+                        <PrevSliderButton onClick={() => swiperRef?.current?.slidePrev()} />
+                        <NextSliderButton onClick={() => swiperRef?.current?.slideNext()} />
+                    </div>
                 </Swiper>
-
             </div>
             <div className="hidden">
                 {/* Second Design  */}

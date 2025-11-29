@@ -12,14 +12,13 @@ import CaseStudies from "@/modules/home/components/case-studies";
 import FAQs from "@/modules/home/components/faqs";
 import OurWork from "@/modules/home/components/our-work";
 import Testing from "@/modules/home/components/testing";
+import Starfield from "@/modules/layout/components/starfield";
 export default function Home() {
   return (
     <div className="w-full">
       <Header />
+      {/* <Starfield/> */}
       <div className="container mx-auto" >
-        <div className="flex justify-center items-center relative">
-          <div className="absolute -top-10 z-10 sm:w-[900px] h-[700px] mx-auto" style={{ backgroundImage: "radial-gradient(at center center, #A34133AD 0%, #FFFFFF00 63%)", opacity: 0.7, }}></div>
-        </div>
         <div className="mt-50 mb-40 flex flex-col justify-center items-center gap-10 mx-auto py-10 z-20 relative" >
           <h1 className="h1 text-center">
             Future-Ready IT Solutions<br /> for Growing Businesses

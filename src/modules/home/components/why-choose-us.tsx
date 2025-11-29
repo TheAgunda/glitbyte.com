@@ -6,7 +6,7 @@ const WhyChooseUs: React.FC<{}> = () => {
                 <h2 className="h2">Why Choose {APP.NAME}?</h2>
                 <p className='text-[#ffffffb3] text-lg'>Smart infrastructure and design flexibility to scale AI experiences, fast.</p>
             </div>
-            <div className='grid grid-cols-4 gap-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
                 <div className='feature-card'>
                     <div className='feature-detail-div'>
                         <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8c1e3f3f370494e7144_feature-icon1.svg" loading="lazy" alt="" className="feature-icon"></img>
@@ -79,7 +79,7 @@ const WhyChooseUs: React.FC<{}> = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-4 gap-5 mt-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-6'>
                 <div className="compliance-card">
                     <div className="compliance-icon-div _01">
                         <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8c3410a2c9e30be7f6f_compliance-icon1.svg" loading="lazy" alt="" className="compliance-icon" />

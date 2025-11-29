@@ -17,7 +17,7 @@ const About: React.FC<{}> = () => {
                 <div className="flex justify-end">
 
                     <div>
-                        <img src="/svg/about.svg" />
+                        {/* <img src="/svg/about.svg" /> */}
                         {/* <div className="w-120 h-120 bg-white/20 relative">
                   <div className="absolute w-60 h-60 -bottom-20 -right-20 bg-white/20">
                   </div>

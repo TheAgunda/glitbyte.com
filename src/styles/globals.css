@@ -71,7 +71,7 @@ body {
 }
 
 @utility header {
-  @apply flex p-3 rounded-lg backdrop-blur-2xl justify-between border border-mine-shaft items-center bg-brand-6
+  @apply flex py-2 px-5 rounded-lg backdrop-blur-2xl justify-between border border-mine-shaft items-center bg-brand-6
 }
 
 @utility nav-link {
@@ -88,7 +88,7 @@ body {
 }
 
 @utility paragraph {
-  @apply text-xl font-nunito
+  @apply text-base font-nunito font-normal text-[#ffffffb3]
 }
 
 @utility h2 {
@@ -274,7 +274,7 @@ body {
 }
 
 @utility large-paragraph {
-  @apply text-lg font-normal text-[#ffffffb3] mb-0
+  @apply text-lg font-normal text-[#ffffffb3] mb-0;
 }
 
 .large-paragraph.faq-heading {
@@ -351,16 +351,19 @@ body {
 }
 
 
+
+
+
+/********** Work  *************************************************************************/
 @utility our-work-tab-wrapper {
   @apply border-t border-[#ffffff1a] mt-20 flex items-start
 }
 
 @utility our-work-sticky-tab-menu {
-  @apply sticky top-20 flex pt-10 mr-4 w-[32%]
+  @apply sticky top-20 flex pt-10 pr-4 w-full
 }
-
 @utility our-work-tab-card {
-  @apply flex gap-6
+  @apply flex flex-col gap-6
 }
 
 @utility work-brand-icon {
@@ -370,6 +373,75 @@ body {
 @utility our-work-heading-div {
   @apply flex flex-col gap-3
 }
+
+@utility our-work-heading-div {
+  @apply flex flex-col gap-3
+}
+
+@utility h3-heading {
+  @apply my-0 text-4xl font-normal text-white
+}
+
+@utility work-label-div {
+  @apply flex flex-wrap gap-1
+}
+
+@utility small-paragraph {
+  @apply text-sm font-normal tracking-[1.2px] mb-0 text-[#ffffffb3]
+}
+
+.small-paragraph.work-label-text {
+  background-color: #ffffff0d;
+  border-radius: 100px;
+  padding: 12px 16px;
+}
+.small-paragraph.work-label-text:hover {
+  background-color: #ffffff1a;
+}
+
+@utility work-small-image {
+  @apply w-full
+}
+
+@utility w-inline-block {
+  @apply max-w-full inline-block
+}
+
+@utility work-small-image-div {
+  @apply rounded-[22px] relative overflow-hidden
+}
+
+@utility work-tab-link{
+  @apply bg-[#121212] pl-4 text-lg font-medium rounded-xl p-5 w-full
+}
+
+    /* border-top: 1px solid var(--color--white-100);
+    color: var(--color--white);
+    text-transform: uppercase;
+    background-color: #0000;
+    background-image: none;
+    background-repeat: repeat;
+    background-size: auto;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 121%; */
+
+.paragraph.work-text {
+  max-width: 340px;
+}
+
+/* color: var(--color--white);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 120%; */
+/* grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    flex-flow: column;
+    display: flex; */
+
 
 /* grid-column-gap: 24px;
     grid-row-gap: 24px;
@@ -482,4 +554,12 @@ extend: {
   background: rgb(255 255 255 / 70%);
   opacity: 1;
   transform: scale(1.2);
+}
+
+.blog-pagination {
+  width: 100% !important;
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }

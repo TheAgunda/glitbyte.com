@@ -1,8 +1,9 @@
 import Button from "@/modules/common/components/button";
+import Link from "next/link";
 
-const OurWork: React.FC<{}> = () => {
+const OurWork = () => {
     return (
-        <>
+        <div className="mb-10">
             <div className="flex items-end justify-between gap-6 mb-10">
                 <h2 className="h2 max-w-md">
                     Featured Design + AI Project portfolio
@@ -16,46 +17,54 @@ const OurWork: React.FC<{}> = () => {
                     </div>
                 </div>
             </div>
-            <div className="our-work-tab-wrapper">
-                <div className="our-work-sticky-tab-menu">
-                    <div>
-                        AI
+            <div className="our-work-tab-wrapper grid grid-cols-3">
+                <div className="our-work-sticky-tab-menu flex flex-col gap-3">
+                    <div className="work-tab-link w-inline-block w-tab-link w--current">
+                        E-Commerce
                     </div>
-                    <div>
-                        AI
+                    <div className="work-tab-link w-inline-block w-tab-link w--current">
+                        Artificial Intelligence
                     </div>
-                    <div>
-                        AI
+                    <div className="work-tab-link w-inline-block w-tab-link w--current">
                     </div>
-
                 </div>
-                <div>
-                    <div className="our-work-tab-card">
-                        <div className="work-brand-icon">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="45" height="45" fill="url(#paint0_linear_2029_254)" />
-                                <path d="M20.0606 10.9078C21.2573 9.23608 23.7427 9.23608 24.9394 10.9078L28.4687 15.8381C28.6602 16.1056 28.8944 16.3398 29.1619 16.5313L34.0922 20.0606C35.7639 21.2573 35.7639 23.7427 34.0922 24.9394L29.1619 28.4687C28.8944 28.6602 28.6602 28.8944 28.4687 29.1619L24.9394 34.0922C23.7427 35.7639 21.2573 35.7639 20.0606 34.0922L16.5313 29.1619C16.3398 28.8944 16.1056 28.6602 15.8381 28.4687L10.9078 24.9394C9.23608 23.7427 9.23608 21.2573 10.9078 20.0606L15.8381 16.5313C16.1056 16.3398 16.3398 16.1056 16.5313 15.8381L20.0606 10.9078Z" fill="white" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_2029_254" x1="34.5" y1="41" x2="0" y2="0" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#00C4A3" />
-                                        <stop offset="0.265" stop-color="#10633A" />
-                                        <stop offset="1" stop-color="#067914" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-                        <div className="our-work-heading-div">
-                            <h3 className="h3-heading">NeuronIQ – AI-Powered Hiring Assistant</h3>
-                            <p className="paragraph work-text">Streamlined UX for smarter candidate filtering and team collaboration.</p>
-                        </div>
-
-
-                    </div>
-
+                <div className="col-span-2 grid grid-cols-2 gap-10 mt-10">
+                    {
+                        Array(4).fill(0).map(() => {
+                            return (<>
+                                <div className="our-work-tab-card px-2.5">
+                                    <div className="work-brand-icon">
+                                        <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="45" height="45" fill="url(#paint0_linear_2029_254)" />
+                                            <path d="M20.0606 10.9078C21.2573 9.23608 23.7427 9.23608 24.9394 10.9078L28.4687 15.8381C28.6602 16.1056 28.8944 16.3398 29.1619 16.5313L34.0922 20.0606C35.7639 21.2573 35.7639 23.7427 34.0922 24.9394L29.1619 28.4687C28.8944 28.6602 28.6602 28.8944 28.4687 29.1619L24.9394 34.0922C23.7427 35.7639 21.2573 35.7639 20.0606 34.0922L16.5313 29.1619C16.3398 28.8944 16.1056 28.6602 15.8381 28.4687L10.9078 24.9394C9.23608 23.7427 9.23608 21.2573 10.9078 20.0606L15.8381 16.5313C16.1056 16.3398 16.3398 16.1056 16.5313 15.8381L20.0606 10.9078Z" fill="white" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear_2029_254" x1="34.5" y1="41" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#00C4A3" />
+                                                    <stop offset="0.265" stop-color="#10633A" />
+                                                    <stop offset="1" stop-color="#067914" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div className="our-work-heading-div">
+                                        <h3 className="h3-heading">NeuronIQ – AI-Powered Hiring Assistant</h3>
+                                        <p className="paragraph work-text">Streamlined UX for smarter candidate filtering and team collaboration.</p>
+                                    </div>
+                                    <div className="work-label-div">
+                                        <div className="small-paragraph work-label-text">Product Design</div>
+                                        <div className="small-paragraph work-label-text background-color">AI SaaS</div>
+                                        <div className="small-paragraph work-label-text">UX Strategy</div>
+                                    </div>
+                                    <Link href={'#'} className="work-small-image-div w-inline-block">
+                                        <img src="https://cdn.prod.website-files.com/688877cbc5e1fabc679dc7c5/6888a70c23271c7ea5b19417_work-small6-p-1080.webp" className="work-small-image" />
+                                    </Link>
+                                </div>
+                            </>)
+                        })
+                    }
                 </div>
-
             </div>
-        </>
+        </div>
     )
 }
 

@@ -4,7 +4,33 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper/modules';
-
+export const breakpoints = {
+    // When window width is >= 320px
+    320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+    },
+    // When window width is >= 480px
+    480: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+    },
+    // When window width is >= 768px
+    768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+    },
+    // // When window width is >= 1024px
+    // 1024: {
+    //     slidesPerView: 4,
+    //     spaceBetween: 30,
+    // },
+    // // When window width is >= 1440px
+    // 1440: {
+    //     slidesPerView: 5,
+    //     spaceBetween: 40,
+    // },
+}
 const CaseStudies: React.FC<{}> = () => {
     return (
         <div>
@@ -21,11 +47,28 @@ const CaseStudies: React.FC<{}> = () => {
                 spaceBetween={30}
                 freeMode={true}
                 pagination={{
+                    el: ".blog-pagination",
                     type: "bullets",
                     clickable: true,
+                    dynamicBullets: true,
+                    dynamicMainBullets: 3,
+                    bulletElement: "button",
+                    bulletClass: "swiper-bullet",
+                    bulletActiveClass: "swiper-bullet-active",
+                    modifierClass: "blog-pagination-",
+                    hideOnClick: false,
+                    renderBullet: (index, className) => {
+                        return `<button class="${className}"><span class="sr-only">${index + 1}</span></button>`;
+                    },
                 }}
                 modules={[FreeMode, Pagination]}
                 className="blog-slider-wrapper"
+                loop={true}
+                speed={700}
+                style={{
+                    transitionTimingFunction: "ease-in-out", // smooth easing
+                }}
+                breakpoints={breakpoints}
             >
                 <SwiperSlide>
                     <div className="blog-card">
@@ -89,6 +132,7 @@ const CaseStudies: React.FC<{}> = () => {
                         </div>
                     </div>
                 </SwiperSlide>
+                <div className="blog-pagination" />
             </Swiper>
         </div >
     )

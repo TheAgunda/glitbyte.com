@@ -45,7 +45,7 @@ const Testing = () => {
             </aside>
 
             {/* Content */}
-            <main className="flex-1 overflow-y-auto scroll-smooth px-12 py-8 space-y-24">
+            {/* <main className="flex-1 overflow-y-auto scroll-smooth px-12 py-8 space-y-24">
                 {["section1", "section2", "section3", "section4"].map((id, i) => (
                     <section
                         key={id}
@@ -56,7 +56,7 @@ const Testing = () => {
                         <h2 className="text-2xl font-bold text-gray-800">{`This is ${id}`}</h2>
                     </section>
                 ))}
-            </main>
+            </main> */}
         </div>
     );
 };

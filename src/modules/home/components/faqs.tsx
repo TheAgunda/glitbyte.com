@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const FAQs: React.FC<{}> = () => {
     const [active, setActive] = useState(-1);
     return (
-        <div className="grid grid-cols-2 my-30">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-0 my-30">
             <div className="flex flex-col gap-6">
                 <h2 className="h2 max-w-sm">Frequently Asked Questions</h2>
                 <p className="text-secondary text-lg max-w-[400px]">
