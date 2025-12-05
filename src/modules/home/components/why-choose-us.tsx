@@ -209,6 +209,41 @@ const WhyChooseUs: React.FC<{}> = () => {
                     </div>
                 </div>
             </div>
+
+            <div className='relative'>
+                <div style={{
+                    opacity: ".5",
+                    pointerEvents: "none",
+                    zIndex: 0,
+                    background: "radial-gradient(50% 53% at 50% 100%, #171717 0%, #ababab00 100%)",
+                    flex: "none",
+                    width: "100%",
+                    maxWidth: "1800px",
+                    height: "722px",
+                    position: "absolute",
+                    bottom: "0",
+                    left: "calc(50% - min(1800px, 100%) / 2)",
+                    overflow: "hidden",
+                }}>
+                </div>
+                <div style={{
+                    opacity: ".5",
+                    pointerEvents: "none",
+                    zIndex: 0,
+                    background: "radial-gradient(50% 53% at 50% 100%, #171717 0%, #ababab00 100%)",
+                    flex: "none",
+                    width: "100%",
+                    maxWidth: "1800px",
+                    height: "307px",
+                    position: "absolute",
+                    bottom: "0",
+                    left: "calc(50% - min(1800px, 100%) / 2)",
+                    overflow: "hidden",
+                }}>
+
+                </div>
+
+            </div>
         </div >
     )
 }

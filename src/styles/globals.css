@@ -24,7 +24,10 @@
   --color-yellow: #FFCC00;
   --color-cod-gray: #1A1919;
   --color-cod-gray-2: #111111;
-  --color-mine-shaft: #303030;
+  --color-mine-shaft:
+    rgb(48, 48, 48, 1)
+    /*#303030*/
+  ;
   --color-gray: #828282;
   --color-sunset-orange: #FC5844;
   --color-web-orange: #FFA600;
@@ -71,15 +74,16 @@ body {
 }
 
 @utility header {
-  @apply flex py-2 px-5 rounded-lg backdrop-blur-2xl justify-between border border-mine-shaft items-center bg-brand-6
+  @apply flex py-2 px-5 rounded-lg justify-between items-center border-mine-shaft
 }
 
+/* border border-mine-shaft backdrop-blur-2xl bg-brand-6  */
 @utility nav-link {
-  @apply text-sm font-medium text-brand-2 px-3 py-2 font-titillium
+  @apply text-base font-medium tracking-wide text-brand-2 px-3 py-2 font-nunito hover:text-primary transition-colors duration-500
 }
 
 @utility footer-link {
-  @apply flex text-brand-9 hover:text-brand-11 text-sm font-normal font-titillium
+  @apply flex text-brand-9 hover:text-brand-11 text-sm font-normal font-nunito
 }
 
 
@@ -141,7 +145,7 @@ body {
 }
 
 @utility contact-form-input {
-  @apply w-full px-5 py-3 mt-2 text-white placeholder-white/60 bg-white/10 border border-white/20 rounded-lg focus:border-primary focus:ring-primary/50 focus:outline-none focus:ring
+  @apply w-full px-5 py-3 mt-2 text-white placeholder-white/60 bg-[#101010] border border-[#e3e3fe14] rounded-lg focus:border-primary focus:ring-primary/50 focus:outline-none focus:ring
 }
 
 
@@ -362,6 +366,7 @@ body {
 @utility our-work-sticky-tab-menu {
   @apply sticky top-20 flex pt-10 pr-4 w-full
 }
+
 @utility our-work-tab-card {
   @apply flex flex-col gap-6
 }
@@ -395,6 +400,7 @@ body {
   border-radius: 100px;
   padding: 12px 16px;
 }
+
 .small-paragraph.work-label-text:hover {
   background-color: #ffffff1a;
 }
@@ -411,11 +417,11 @@ body {
   @apply rounded-[22px] relative overflow-hidden
 }
 
-@utility work-tab-link{
+@utility work-tab-link {
   @apply bg-[#121212] pl-4 text-lg font-medium rounded-xl p-5 w-full
 }
 
-    /* border-top: 1px solid var(--color--white-100);
+/* border-top: 1px solid var(--color--white-100);
     color: var(--color--white);
     text-transform: uppercase;
     background-color: #0000;
@@ -486,6 +492,7 @@ body {
     max-width: 1320;
   }
 }
+
 
 
 

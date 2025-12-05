@@ -78,7 +78,7 @@ const ContactForm: React.FC<{}> = () => {
 
                     <div className="mt-8 lg:w-1/2 lg:mx-6">
                         <div
-                            className="w-full px-12 py-15 mx-auto overflow-hidden bg-white/10 rounded-[20px] shadow-2xl lg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
+                            className="w-full px-12 py-15 mx-auto overflow-hidden bg-[#121212] border border-[#e3e3fe14] rounded-[20px] shadow-2xl lg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
                             <h1 className="text-lg font-medium text-white w-sm">
                                 Transforming ideas into solutions with AI and tech expertise.
                             </h1>

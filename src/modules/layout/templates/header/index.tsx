@@ -7,8 +7,9 @@ interface HeaderProps {
     children?: React.ReactNode
 }
 const Header: React.FC<HeaderProps> = () => {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false)
-    const [magnetActive, setMagnetActive] = React.useState(false)
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [magnetActive, setMagnetActive] = React.useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const links = [
         {
             name: "Home",
@@ -26,16 +27,38 @@ const Header: React.FC<HeaderProps> = () => {
             name: "Landing",
             link: "/landing"
         }
-    ]
+    ];
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 80);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <header className="absolute inset-x-0 top-0 flex items-center justify-between py-12 z-[999]">
-            <div className="fixed w-full p-3 sm:p-4 ">
-                <div className={`header container`}>
-                    <div className="flex gap-5">
+            <div className="fixed w-full p-3 sm:p-4"  >
+                <motion.div
+                    initial={{ backgroundColor: "rgba(255,255,255,0)" }}
+                    animate={{
+                        backgroundColor: scrolled
+                            ? "var(--color-brand-6)"
+                            : "rgba(41, 41, 41, 0)",
+                        backdropFilter: scrolled ? "blur(40px)" : "blur(0px)",
+                        borderWidth: scrolled ? 1 : 0,
+                        borderColor: scrolled
+                            ? "var(--color-mine-shaft)"
+                            : "rgba(48, 48, 48,0)",
+                        transform: scrolled ? "translate3d(0,0,0)" : "translate3d(0,45px,0)"
+                    }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className={`header container`}
+                >
+                    <div className="flex justify-between gap-5 w-full">
                         <Logo />
-
                         <ul className="hidden sm:flex sm:items-center">
                             {
                                 links && links.map((data, index) => {
@@ -45,40 +68,45 @@ const Header: React.FC<HeaderProps> = () => {
                                 })
                             }
                         </ul>
+                        <div className="flex items-center relative gap-2">
+                            <button className="bg-brand-5 text-sm text-brand-3 py-2 px-3 leading-none rounded-sm font-medium tracking-wider hover:text-brand-2 hover:bg-brand-4 transition-all duration-500">
+                                Contact Us
+                            </button>
+                            <button
+                                className={`relative w-10 h-10 bg-zinc-800 hover:bg-zinc-800/80 rounded-full flex flex-col items-center transition-all duration-300 justify-center sm:hidden ${!isMenuOpen ? "gap-y-1" : ""}`}
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                onPointerEnter={() => setMagnetActive(true)}
+                                onPointerLeave={() => setMagnetActive(false)}
+                            >
+                                <span className={`h-[2px] transition-all duration-300 bg-zinc-300 z-[10] ${!isMenuOpen ? "w-5" : "w-4 mb-[-1px] rotate-45"}`}></span>
+                                <span className={`h-[2px] transition-all duration-300 bg-zinc-300 z-[10] ${!isMenuOpen ? "w-5" : "w-4 mt-[-1px] -rotate-45"}`}></span>
+                                {magnetActive ?
+                                    <motion.div layoutId="cursor" className="absolute inset-0 bg-red-500 rounded-full"></motion.div> : null
+                                }
+                            </button>
+                        </div>
                     </div>
-                    <div className="flex items-center relative gap-2">
-                        <button className="bg-brand-5 text-sm text-brand-3 py-2 px-3 leading-none rounded-sm font-medium tracking-wider hover:text-brand-2 hover:bg-brand-4 transition-all duration-500">
-                            Contact Us
-                        </button>
-                        <button
-                            className={`relative w-10 h-10 bg-zinc-800 hover:bg-zinc-800/80 rounded-full flex flex-col items-center transition-all duration-300 justify-center sm:hidden ${!isMenuOpen ? "gap-y-1" : ""}`}
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            onPointerEnter={() => setMagnetActive(true)}
-                            onPointerLeave={() => setMagnetActive(false)}
-                        >
-                            <span className={`h-[2px] transition-all duration-300 bg-zinc-300 z-[10] ${!isMenuOpen ? "w-5" : "w-4 mb-[-1px] rotate-45"}`}></span>
-                            <span className={`h-[2px] transition-all duration-300 bg-zinc-300 z-[10] ${!isMenuOpen ? "w-5" : "w-4 mt-[-1px] -rotate-45"}`}></span>
-                            {magnetActive ?
-                                <motion.div layoutId="cursor" className="absolute inset-0 bg-red-500 rounded-full"></motion.div> : null
-                            }
-                        </button>
-                    </div>
-                </div>
+                </motion.div>
             </div>
             <motion.nav
+                // transition={{
+                //     type: "tween",
+                //     damping: 100,
+                //     stiffness: 3000,
+                // }}
                 transition={{
-                    type: "spring",
-                    damping: 100,
-                    stiffness: 500,
+                    duration: 0.75,
+                    ease: [0.25, 0.1, 0.25, 1], // smooth ease
                 }}
                 initial={{
-                    y: "-100%"
+                    y: "-100%",
                 }}
                 animate={{
                     y: !isMenuOpen ? "-100%" : "0%"
                 }}
+
                 className="fixed inset-0 -bg-zinc-900/80 -backdrop-blur z-[-1]">
-                <div className={`${isMenuOpen ? 'mt-22  m-3 sm:m-4' : 'hidden'} flex border border-mine-shaft rounded-lg backdrop-blur-2xl mt-2 bg-brand-6`}>
+                <div className={`${isMenuOpen ? 'm-3 sm:m-4' : 'hidden'} ${scrolled?'mt-22':'mt-33'}   flex border border-mine-shaft rounded-lg backdrop-blur-2xl mt-2 bg-brand-6`}>
                     <ul className="flex flex-col gap-0.5 p-3 w-full">
                         {
                             links && links.map((data, index) => {

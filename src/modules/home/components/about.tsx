@@ -1,11 +1,19 @@
+"use client";
 import Button from "@/modules/common/components/button";
 import Abstract from "./abstract";
 import { APP } from '@/lib/constants';
+import { motion } from "framer-motion"
+import { fadeIn } from "@/utils/helper";
+import APP_SETTINGS from "@/animation-setting";
 const About: React.FC<{}> = () => {
     return (
         <div className="mb-10">
             <div className="grid grid-cols-2">
-                <div className="flex flex-col justify-center items-start">
+                
+                <motion.div
+                    variants={fadeIn('right', 0.3)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.3 }}
+                    className="flex flex-col justify-center items-start"
+                >
                     <h2 className="h4 text-secondary pb-3 relative">
                         Welcome to <span className="text-primary text-4xl">{APP.NAME}</span>
                         <Abstract />
@@ -13,8 +21,8 @@ const About: React.FC<{}> = () => {
                     <p className=" font-semibold  mb-5 h2">Where Innovation Meets Craftsmanship and Drives Performance</p>
                     <p className="text-secondary">We are a digital innovation studio that blends modern design with bulletproof development to build custom software solutions that don’t just work — they wow. With deep domain expertise and a relentless passion for technology, we deliver digital products that are intuitive, scalable, and future-ready.</p>
                     <Button title="Learn about us" className="mt-7.5"></Button>
-                </div>
-                <div className="flex justify-end">
+                </motion.div>
+                  <div className="flex justify-end">
 
                     <div>
                         {/* <img src="/svg/about.svg" /> */}
@@ -24,8 +32,9 @@ const About: React.FC<{}> = () => {
                 </div> */}
                     </div>
                 </div>
+              
             </div>
-        </div>
+        </div >
     )
 }
 
