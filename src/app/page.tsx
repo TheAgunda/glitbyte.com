@@ -15,13 +15,15 @@ import Testing from "@/modules/home/components/testing";
 import Starfield from "@/modules/layout/components/starfield";
 import Heading from "@/modules/common/components/ui/heading";
 import Hero from "@/modules/home/components/hero";
+import HeroBackground from "@/modules/home/components/hero-background";
 export default function Home() {
   return (
     <div className="w-full  ">
       <Header />
       {/* <Starfield /> */}
       <div className="relative  w-full">
-        <img src="/svg/looper-bg.svg" className="absolute rotate-[196deg] -top-20 right-19" />
+        <HeroBackground />
+        {/* <img src="/svg/looper-bg.svg" className="absolute rotate-[196deg] -top-20 right-19" /> */}
       </div>
       <div className="container mx-auto" >
         <Hero />

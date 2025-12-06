@@ -40,7 +40,8 @@ const Header: React.FC<HeaderProps> = () => {
 
     return (
         <header className="absolute inset-x-0 top-0 flex items-center justify-between py-12 z-[999]">
-            <div className="fixed w-full p-3 sm:p-4"  >
+            {/* fixed w-full p-3 sm:p-4 */}
+            <div className="fixed w-full"  >
                 <motion.div
                     initial={{ backgroundColor: "rgba(255,255,255,0)" }}
                     animate={{
@@ -55,9 +56,9 @@ const Header: React.FC<HeaderProps> = () => {
                         transform: scrolled ? "translate3d(0,0,0)" : "translate3d(0,45px,0)"
                     }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className={`header container`}
+                    className={`header container !p-0`}
                 >
-                    <div className="flex justify-between gap-5 w-full">
+                    <div className="flex justify-between w-full px-3 py-2.5">
                         <Logo />
                         <ul className="hidden sm:flex sm:items-center">
                             {
@@ -69,7 +70,7 @@ const Header: React.FC<HeaderProps> = () => {
                             }
                         </ul>
                         <div className="flex items-center relative gap-2">
-                            <button className="bg-brand-5 text-sm text-brand-3 py-2 px-3 leading-none rounded-sm font-medium tracking-wider hover:text-brand-2 hover:bg-brand-4 transition-all duration-500">
+                            <button className="bg-brand-5 text-sm text-brand-3 py-2 px-3 leading-none rounded-full font-medium tracking-wider hover:text-brand-2 hover:bg-brand-4 transition-all duration-500">
                                 Contact Us
                             </button>
                             <button
@@ -106,7 +107,7 @@ const Header: React.FC<HeaderProps> = () => {
                 }}
 
                 className="fixed inset-0 -bg-zinc-900/80 -backdrop-blur z-[-1]">
-                <div className={`${isMenuOpen ? 'm-3 sm:m-4' : 'hidden'} ${scrolled?'mt-22':'mt-33'}   flex border border-mine-shaft rounded-lg backdrop-blur-2xl mt-2 bg-brand-6`}>
+                <div className={`${isMenuOpen ? 'm-3 sm:m-4' : 'hidden'} ${scrolled ? 'mt-22' : 'mt-33'}   flex border border-mine-shaft rounded-lg backdrop-blur-2xl mt-2 bg-brand-6`}>
                     <ul className="flex flex-col gap-0.5 p-3 w-full">
                         {
                             links && links.map((data, index) => {

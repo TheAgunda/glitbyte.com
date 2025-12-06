@@ -76,13 +76,9 @@ export default function Home() {
                   <img src="https://azim.commonsupport.com/Emu/assets/images/icons/rocket-1.png" className="w-50 -top-20 absolute" />
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
-
-
         <div className="container mx-auto">
           <div className="mt-20">
             <h2 className="h2">Let’s Connect</h2>
@@ -93,10 +89,7 @@ export default function Home() {
             <p>🔗 LinkedIn | Dribbble | GitHub</p>
             <p>Or fill out our project planner form — we’ll respond within 12 hours.</p>
           </div>
-
         </div>
-
-
       </div>
       <div className="container mx-auto flex flex-col gap-2">
         <div className="flex justify-center items-center">

@@ -12,7 +12,7 @@ const Hero: React.FC<{}> = () => {
     return (
         <div className="flex">
             {/* mx-auto py-10  */}
-            <div className="pt-73 pb-50 flex flex-col justify-center items-start gap-10 z-20 relative max-w-[920px]" >
+            <div className="pt-85 pb-30 flex flex-col justify-center items-start gap-10 z-20 relative max-w-[920px]" >
                 <motion.div
                     variants={fadeIn('up', 0.3)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }}
                 >
@@ -30,9 +30,9 @@ const Hero: React.FC<{}> = () => {
                         <span className="text-base font-normal z-20 ps-2">
                             Get a Quote
                         </span>
-                        <div className="z-20">
-                            <span className="w-11 h-11 rounded-full bg-primary text-white flex justify-center items-center">
-                                <svg className="w-4.5 h-4.5 rotate-[30deg] group-hover:rotate-0 transition-all duration-[1.2s]" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div className="z-20 ">
+                            <span className="w-11 h-11 rounded-full bg-primary text-white flex justify-center items-center relative">
+                                <svg className="absolute w-4.5 h-4.5 rotate-[30deg] group-hover:rotate-0 transition-all duration-[1.2s]" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M18.4507 32L32 18.4483L18.4507 4.89651" stroke="currentColor" strokeWidth="2.43243" strokeLinecap="round" strokeLinejoin="round" />
                                     <path d="M4.90137 18.4482L32 18.4482" stroke="currentColor" strokeWidth="2.43243" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
@@ -43,16 +43,9 @@ const Hero: React.FC<{}> = () => {
             </div>
             <div className="flex items-end">
                 <div className=" w-full">
-                    {/* <Image src="/images/image.jpg" width={100} height={100} alt=""  className="w-100 h-full pb-20"/> */}
-                    {/* <div className="bg-web-orange w-full h-50">
-                        s``
-                    </div>
-                    <div className="bg-web-orange w-full  h-50">
-                        full
-                    </div> */}
+                    {/* <Image src="/images/image.jpg" width={100} height={100} alt="" className="w-100 h-full pb-20" /> */}
                 </div>
             </div>
-         
         </div >
 
     )
