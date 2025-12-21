@@ -17,7 +17,6 @@ const Abstract: React.FC<{}> = () => {
                 </div>
                 <div className="w-4.5 h-4.5 ">
                 </div>
-
             </div>
             <div className="flex">
                 <div className="w-4.5 h-4.5 bg-primary">

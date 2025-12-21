@@ -1,5 +1,4 @@
 import { APP } from "@/lib/constants";
-
 const ContactForm: React.FC<{}> = () => {
     return (
         <section className="x">
@@ -74,8 +73,7 @@ const ContactForm: React.FC<{}> = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
-
+                    </div>s
                     <div className="mt-8 lg:w-1/2 lg:mx-6">
                         <div
                             className="w-full px-12 py-15 mx-auto overflow-hidden bg-[#121212] border border-[#e3e3fe14] rounded-[20px] shadow-2xl lg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
@@ -117,17 +115,11 @@ const ContactForm: React.FC<{}> = () => {
                                         {/* <input type="phone" placeholder="+91 8973924829" className="contact-form-input " /> */}
                                         <select id="Project-budget" name="Project-budget" data-name="Project budget" className="contact-input select w-select"><option value="">Select Your Range</option><option value="$500 - $1000">$500 - $1000</option><option value="$1000 - $1500">$1000 - $1500</option><option value="Up to $2000">Up to $2000</option></select>
                                     </div>
-
                                 </div>
-
-
-
-
                                 <div className="w-full mt-6">
                                     <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Project details*</label>
                                     <textarea className="h-32 contact-form-input  md:h-48" placeholder="Tell us more about your idea"></textarea>
                                 </div>
-
                                 <button className="w-full px-6 py-4 mt-6 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-full hover:bg-primary focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50">
                                     get in touch
                                 </button>

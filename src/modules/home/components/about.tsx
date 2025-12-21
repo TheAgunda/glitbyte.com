@@ -5,11 +5,15 @@ import { APP } from '@/lib/constants';
 import { motion } from "framer-motion"
 import { fadeIn } from "@/utils/helper";
 import APP_SETTINGS from "@/animation-setting";
+import { useEffect } from "react";
+import { animate } from "animejs";
 const About: React.FC<{}> = () => {
+    useEffect(() => {
+       
+    }, [])
     return (
         <div className="mb-10">
             <div className="grid grid-cols-2">
-
                 <motion.div
                     variants={fadeIn('right', 0.3)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.3 }}
                     className="flex flex-col justify-center items-start max-w-[600px]"
@@ -26,7 +30,7 @@ const About: React.FC<{}> = () => {
                     variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.3 }}
                     className="flex justify-end">
                     <div className="about-image-div">
-                        <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/68821a3fbceb02ba524dd178_90f32a709b618c5590a4294c01832519_about.webp" alt="About Image" className="about-image" />
+                        <img src="/images/babaji.png" alt="About Image" className="about-image baba-ji" />
                     </div>
                 </motion.div>
             </div>

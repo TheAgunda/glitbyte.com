@@ -1,19 +1,25 @@
 "use client";
-import { animate, svg, } from "animejs"
+import { animate, svg, createDrawable, stagger, onScroll } from "animejs"
 import { useEffect } from "react";
 const HeroBackground = () => {
     useEffect(() => {
-
         const animation_time = 5000;
-        // Animate the transforms properties of .car the motion path values
-        // Line drawing animation following the motion path values
-        // For demo aesthetic only
         animate(svg.createDrawable('.path'), {
             draw: '0 1',
             ease: 'linear',
             duration: animation_time,
             loop: false,
         });
+
+        //
+        // Scroll Observer
+        // Synchronise and trigger animations on scroll with the Scroll Observer API.
+        // animate(createDrawable('.path'), {
+        //     draw: ['0 0', '0 1', '1 1'],
+        //     delay: stagger(40),
+        //     ease: 'inOut(3)',
+        //     autoplay: onScroll({ sync: true }),
+        // });
     }, [])
     return (
         <svg className="absolute rotate-[-184deg] w-full -top-109 right-30" width="2545" height="1934" viewBox="0 0 2545 1934" fill="none" xmlns="http://www.w3.org/2000/svg">

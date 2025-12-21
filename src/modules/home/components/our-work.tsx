@@ -1,10 +1,79 @@
+"use client";
 import Button from "@/modules/common/components/button";
 import Link from "next/link";
-
+import { motion } from "framer-motion"
+import { fadeIn } from "@/utils/helper";
+import APP_SETTINGS from "@/animation-setting";
 const OurWork = () => {
+    const works = [
+        {
+            title: "Nanobot – AI Chat Experience",
+            description: "Streamlined UX for smarter candidate filtering and team collaboration.",
+            keywords: [
+                "Product Design",
+                "AI SaaS",
+                "UX Strategy"
+            ],
+            image: "https://cdn.prod.website-files.com/688877cbc5e1fabc679dc7c5/6888a70c23271c7ea5b19417_work-small6-p-1080.webp"
+        },
+        {
+            title: "Echo – AI Analytics Platform Design",
+            description: "Data-rich dashboards with a clean interface for better decision-making.",
+            keywords: [
+                "Interaction",
+                "AI SaaS",
+                "Data Visualization"
+            ],
+            image: "https://cdn.prod.website-files.com/688877cbc5e1fabc679dc7c5/6888a61fb8fa8536eedd474d_work-small5.webp"
+        },
+        {
+            title: "Echo – AI Analytics Platform Design",
+            description: "Data-rich dashboards with a clean interface for better decision-making.",
+            keywords: [
+                "AI Design",
+                "Product Strategy",
+                "UI/UX Design"
+            ],
+            image: "https://cdn.prod.website-files.com/688877cbc5e1fabc679dc7c5/68889f2b98ec5d6ab457a788_work-small1.webp"
+        },
+        {
+            title: "Vireo – Mental Health Care App",
+            description: "Guided SaaS onboarding with real-time tips to drive faster user activation.",
+            keywords: [
+                "Healthcare",
+                "Mobile App Design",
+                "Brand Identity"
+            ],
+            image: "https://cdn.prod.website-files.com/688877cbc5e1fabc679dc7c5/6888a9f55c4b5a41eed8932f_work-small9.webp"
+        },
+        {
+            title: "Clarity – Healthcare Onboarding Dashboard",
+            description: "Guided SaaS onboarding with real-time tips to drive faster user activation.",
+            keywords: [
+                "UX Flow",
+                "SaaS Design",
+                "Frontend Development"
+            ],
+            image: "https://cdn.prod.website-files.com/688877cbc5e1fabc679dc7c5/6888a4088cfd5f1f3e072a78_work-small2.webp"
+        },
+        {
+            title: "OrbitPay – Banking and Fintech App",
+            description: "Modern banking reimagined with intuitive UI and secure user flows.",
+            keywords: [
+                "Fintech",
+                "UI/UX Design",
+                "App Development"
+            ],
+            image: "https://cdn.prod.website-files.com/688877cbc5e1fabc679dc7c5/6888a8e401f8eb3392bdb79b_work-small7.webp"
+        }
+    ]
     return (
         <div className="mb-10">
-            <div className="flex items-end justify-between gap-6 mb-10">
+            <motion.div
+                className="flex items-end justify-between gap-6 mb-10"
+                variants={fadeIn('up', 0.5)} initial="hidden" whileInView={'show'} viewport={{ 
+                    once: APP_SETTINGS.animationOnce, amount: 0.3 }}
+            >
                 <h2 className="h2 max-w-md">
                     Featured Design + AI Project portfolio
                 </h2>
@@ -16,7 +85,7 @@ const OurWork = () => {
                         <Button title="See more projects"></Button>
                     </div>
                 </div>
-            </div>
+            </motion.div>            
             <div className="our-work-tab-wrapper grid grid-cols-3">
                 <div className="our-work-sticky-tab-menu flex flex-col gap-3">
                     <div className="work-tab-link w-inline-block w-tab-link w--current">
@@ -26,13 +95,14 @@ const OurWork = () => {
                         Artificial Intelligence
                     </div>
                     <div className="work-tab-link w-inline-block w-tab-link w--current">
+                        ECOMMERCE
                     </div>
                 </div>
                 <div className="col-span-2 grid grid-cols-2 gap-10 mt-10">
                     {
-                        Array(4).fill(0).map(() => {
-                            return (<>
-                                <div className="our-work-tab-card px-2.5">
+                        works.map((work, index) => {
+                            return (
+                                <div key={index} className="our-work-tab-card px-2.5">
                                     <div className="work-brand-icon">
                                         <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="45" height="45" fill="url(#paint0_linear_2029_254)" />
@@ -47,19 +117,25 @@ const OurWork = () => {
                                         </svg>
                                     </div>
                                     <div className="our-work-heading-div">
-                                        <h3 className="h3-heading">NeuronIQ – AI-Powered Hiring Assistant</h3>
-                                        <p className="paragraph work-text">Streamlined UX for smarter candidate filtering and team collaboration.</p>
+                                        <h3 className="h3-heading">
+                                            {work.title}
+                                        </h3>
+                                        <p className="paragraph work-text">
+                                            {work.description}
+                                        </p>
                                     </div>
                                     <div className="work-label-div">
-                                        <div className="small-paragraph work-label-text">Product Design</div>
-                                        <div className="small-paragraph work-label-text background-color">AI SaaS</div>
-                                        <div className="small-paragraph work-label-text">UX Strategy</div>
+                                        {
+                                            work.keywords.map((keyword) => (
+                                                <div className="small-paragraph work-label-text">{keyword}</div>
+                                            ))
+                                        }
                                     </div>
                                     <Link href={'#'} className="work-small-image-div w-inline-block">
-                                        <img src="https://cdn.prod.website-files.com/688877cbc5e1fabc679dc7c5/6888a70c23271c7ea5b19417_work-small6-p-1080.webp" className="work-small-image" />
+                                        <img src={work.image} className="work-small-image" />
                                     </Link>
                                 </div>
-                            </>)
+                            )
                         })
                     }
                 </div>
