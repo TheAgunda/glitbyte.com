@@ -60,7 +60,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -85,7 +85,7 @@ body {
 
 /* border border-mine-shaft backdrop-blur-2xl bg-brand-6  */
 @utility nav-link {
-  @apply text-base font-medium tracking-wide text-brand-2 px-3 py-2 font-nunito hover:text-primary transition-colors duration-500
+  @apply text-base font-medium tracking-wide text-brand-2 px-7 py-2 font-nunito hover:text-primary transition-colors duration-500
 }
 
 @utility footer-link {

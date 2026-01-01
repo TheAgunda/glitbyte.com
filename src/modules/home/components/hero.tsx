@@ -10,18 +10,19 @@ import Image from "next/image";
 const Hero: React.FC<{}> = () => {
     const [active, setActive] = useState(-1);
     return (
-        <div className="flex">
+        <div className="flex justify-center">
             {/* mx-auto py-10  */}
-            <div className="pt-85 pb-30 flex flex-col justify-center items-start gap-10 z-20 relative max-w-[920px]" >
+            <div className="pt-80 pb-30 flex flex-col justify-center items-center gap-10 z-20 relative max-w-[1080px]" >
                 <motion.div
                     variants={fadeIn('up', 0.3)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }}
                 >
-                    <Heading className="text-white text-left" >
-                        Future-Ready IT Solutions for Growing Businesses
+                    <Heading className="text-white text-center" >
+                        Build Intelligent Digital Products with <span className="text-primary text-5xl md:text-6xl">AI-Driven Excellence</span>
                     </Heading>
                 </motion.div>
-                <motion.p variants={fadeIn('up', 0.5)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }} className="paragraph text-secondary max-w-4xl text-left">
-                    We craft powerful software solutions with elegance, speed, and precision — from sleek mobile apps to complex enterprise platforms.
+                <motion.p variants={fadeIn('up', 0.5)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }} className="paragraph text-secondary max-w-4xl text-center">
+                   We are an AI-powered IT solutions company delivering high-performance digital products through human-centered design, clean architecture, and future-ready technology. From concept to continuous support, we help businesses innovate faster, scale smarter, and operate better.
+                   {/* Transform your ideas into reliable, scalable software. */}
                 </motion.p>
                 <motion.div
                     variants={fadeIn('up', 0.6)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }}
@@ -41,11 +42,13 @@ const Hero: React.FC<{}> = () => {
                     </Link>
                 </motion.div>
             </div>
-            <div className="flex items-end">
-                <div className=" w-full">
-                    {/* <Image src="/images/image.jpg" width={100} height={100} alt="" className="w-100 h-full pb-20" /> */}
-                </div>
-            </div>
+            {/* <div className="flex items-end">
+                <motion.div 
+                  variants={fadeIn('up', 0.6)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }}
+                className="w-full relative">
+                    <Image src="/images/spaceman-rotate.png" width={500} height={500} alt="" className="w-150 h-full" />
+                </motion.div>
+            </div> */}
         </div >
 
     )

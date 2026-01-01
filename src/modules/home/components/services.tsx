@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper';
 import React, { useRef } from 'react';
-
+import { motion } from 'framer-motion';
 export const breakpoints = {
     // When window width is >= 320px
     320: {
@@ -166,7 +166,6 @@ const Services: React.FC<{}> = () => {
                         renderBullet: (index, className) => {
                             return `<button class="${className}"><span class="sr-only">${index + 1}</span></button>`;
                         },
-
                     }}
                     modules={[FreeMode, Pagination]}
                     className=""
@@ -181,7 +180,8 @@ const Services: React.FC<{}> = () => {
                         services && services.map((data, index) => {
                             return (
                                 <SwiperSlide>
-                                    <div className="relative flex  h-110 rounded-[14px] border border-[#e3e3fe14] bg-white/10 hover:translate-y-1 transition-all duration-700 opacity-90 hover:opacity-100 overflow-hidden group">
+                                    <motion.div
+                                        className="relative flex  h-110 rounded-[14px] border border-[#e3e3fe14] bg-white/10 hover:translate-y-1 transition-all duration-700 opacity-90 hover:opacity-100 overflow-hidden group">
                                         <img src={data.backgroundImage} className="align-middle object-cover h-full" />
                                         <div className="absolute h-full p-6 flex flex-col justify-between">
                                             <div className="flex flex-col gap-2.5">
@@ -198,7 +198,7 @@ const Services: React.FC<{}> = () => {
                                                 </svg>
                                             </a>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 </SwiperSlide>
                             )
                         })

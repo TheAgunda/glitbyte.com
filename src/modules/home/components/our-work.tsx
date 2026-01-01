@@ -69,25 +69,36 @@ const OurWork = () => {
     ]
     return (
         <div className="mb-10">
-            <motion.div
-                className="flex items-end justify-between gap-6 mb-10"
-                variants={fadeIn('up', 0.5)} initial="hidden" whileInView={'show'} viewport={{ 
-                    once: APP_SETTINGS.animationOnce, amount: 0.3 }}
+            <div
+                className="flex items-start justify-between gap-6 mb-10"
+
             >
-                <h2 className="h2 max-w-md">
+                <motion.h2
+                    variants={fadeIn('up', 0.5)}
+                    initial="hidden"
+                    whileInView={'show'}
+                    viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }}
+                    className="h2 max-w-md"
+                >
                     Featured Design + AI Project portfolio
-                </h2>
-                <div className="flex flex-col items-start justify-start gap-6">
+                </motion.h2>
+                <motion.div
+                    variants={fadeIn('up', 0.5)}
+                    initial="hidden"
+                    whileInView={'show'}
+                    viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }}
+                    className="flex flex-col items-start justify-start gap-6"
+                >
                     <p className="text-secondary text-lg max-w-[400px]">
                         We team up with startups, SaaS companies, and digital brands to create design-driven solutions that look great — and perform even better.
                     </p>
                     <div>
                         <Button title="See more projects"></Button>
                     </div>
-                </div>
-            </motion.div>            
+                </motion.div>
+            </div>
             <div className="our-work-tab-wrapper grid grid-cols-3">
-                <div className="our-work-sticky-tab-menu flex flex-col gap-3">
+                <div className="our-work-sticky-tab-menu flex flex-col gap-3" >
                     <div className="work-tab-link w-inline-block w-tab-link w--current">
                         E-Commerce
                     </div>
@@ -98,11 +109,14 @@ const OurWork = () => {
                         ECOMMERCE
                     </div>
                 </div>
-                <div className="col-span-2 grid grid-cols-2 gap-10 mt-10">
+                <div className="col-span-2 grid grid-cols-2 gap-10 mt-10"  >
                     {
                         works.map((work, index) => {
                             return (
-                                <div key={index} className="our-work-tab-card px-2.5">
+                                <div
+                                    key={index}
+
+                                    className="our-work-tab-card px-2.5">
                                     <div className="work-brand-icon">
                                         <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="45" height="45" fill="url(#paint0_linear_2029_254)" />

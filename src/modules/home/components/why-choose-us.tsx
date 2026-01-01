@@ -3,17 +3,21 @@ const WhyChooseUs: React.FC<{}> = () => {
     return (
         <div className="mb-10">
             <div className='flex flex-col justify-center items-center gap-6 my-20'>
-                <h2 className="h2">Why Choose {APP.NAME}?</h2>
-                <p className='text-[#ffffffb3] text-lg'>Smart infrastructure and design flexibility to scale AI experiences, fast.</p>
+                <h2 className="h2">
+                    Our Development Approach
+                </h2>
+                <p className='text-[#ffffffb3] text-lg'>
+                    Built on Best Practices. Powered by AI.
+                </p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
                 <div className='feature-card'>
                     <div className='feature-detail-div'>
                         <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8c1e3f3f370494e7144_feature-icon1.svg" loading="lazy" alt="" className="feature-icon"></img>
                         <div className="feature-heading-div">
-                            <div className="large-text">Multilingual by Design</div>
+                            <div className="large-text">Discover</div>
                             <p className="small-paragraph feature-paragraph">
-                                Speak to users in 100+ languages - no plugins.
+                                Understand your business goals and users
                             </p>
                         </div>
                     </div>
@@ -25,9 +29,9 @@ const WhyChooseUs: React.FC<{}> = () => {
                     <div className='feature-detail-div'>
                         <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8c131ca754fc527697a_feature-icon2.svg" loading="lazy" alt="" className="feature-image" />
                         <div className="feature-heading-div" >
-                            <div className="large-text">Intelligent Tool Hooks</div>
+                            <div className="large-text">Design</div>
                             <p className="small-paragraph feature-paragraph">
-                                Connect tools or services to trigger contextual actions.
+                                Create intuitive and scalable experiences
                             </p>
                         </div>
                     </div>
@@ -44,9 +48,9 @@ const WhyChooseUs: React.FC<{}> = () => {
                         <div className='feature-detail-div height'>
                             <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8c394dddd006f53caf8_feature-icon3.svg" loading="lazy" alt="" className="feature-icon" />
                             <div className="feature-heading-div" >
-                                <div className="large-text">Intelligent Tool Hooks</div>
+                                <div className="large-text">Develop</div>
                                 <p className="small-paragraph feature-paragraph">
-                                    Connect tools or services to trigger contextual actions.
+                                    AI-assisted, clean, and secure coding
                                 </p>
                             </div>
                         </div>
@@ -54,11 +58,11 @@ const WhyChooseUs: React.FC<{}> = () => {
                     </div>
                     <div className='feature-card'>
                         <div className='feature-detail-div height'>
-                            <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8c131ca754fc527697a_feature-icon2.svg" loading="lazy" alt="" className="feature-icon" />
+                            <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8c2d84973d12d80bd5b_feature-icon4.svg" loading="lazy" alt="" className="feature-icon" />
                             <div className="feature-heading-div" >
-                                <div className="large-text">Intelligent Tool Hooks</div>
+                                <div className="large-text">Test</div>
                                 <p className="small-paragraph feature-paragraph">
-                                    Connect tools or services to trigger contextual actions.
+                                    Quality assurance at every stage
                                 </p>
                             </div>
                         </div>
@@ -68,9 +72,9 @@ const WhyChooseUs: React.FC<{}> = () => {
                     <div className='feature-detail-div'>
                         <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8d4d0724f1b125623ca_feature-icon5.svg" loading="lazy" alt="" className="feature-icon" />
                         <div className="feature-heading-div" >
-                            <div className="large-text">Intelligent Tool Hooks</div>
+                            <div className="large-text">Deploy</div>
                             <p className="small-paragraph feature-paragraph">
-                                Connect tools or services to trigger contextual actions.
+                                Cloud-ready and performance-optimized
                             </p>
                         </div>
                     </div>
@@ -79,6 +83,7 @@ const WhyChooseUs: React.FC<{}> = () => {
                     </div>
                 </div>
             </div>
+            
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-6'>
                 <div className="compliance-card">
                     <div className="compliance-icon-div _01">
@@ -94,8 +99,8 @@ const WhyChooseUs: React.FC<{}> = () => {
                         <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8d2026e584fa3b8f93b_compliance-icon2.svg" loading="lazy" alt="" className="compliance-icon" />
                     </div>
                     <div className="compliance-detail-div">
-                        <div className="large-paragraph white-text medium-font">99.9% Uptime</div>
-                        <p className="small-paragraph">Enterprise-grade audio infra built.</p>
+                        <div className="large-paragraph white-text medium-font">Launch Support</div>
+                        <p className="small-paragraph">Hands-on help from a dedicated deployment</p>
                     </div>
                 </div>
                 <div className="compliance-card">
@@ -103,8 +108,8 @@ const WhyChooseUs: React.FC<{}> = () => {
                         <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8d285cc2caabf4f2d8d_compliance-icon3.svg" loading="lazy" alt="" className="compliance-icon" />
                     </div>
                     <div className="compliance-detail-div">
-                        <div className="large-paragraph white-text medium-font">99.9% Uptime</div>
-                        <p className="small-paragraph">Enterprise-grade audio infra built.</p>
+                        <div className="large-paragraph white-text medium-font">AI Guardrails</div>
+                        <p className="small-paragraph">Built-in safeguards reduce hallucinations</p>
                     </div>
                 </div>
                 <div className="compliance-card">
@@ -112,8 +117,8 @@ const WhyChooseUs: React.FC<{}> = () => {
                         <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889e8c25d841b499b96b27f_compliance-icon4.svg" loading="lazy" alt="" className="compliance-icon" />
                     </div>
                     <div className="compliance-detail-div">
-                        <div className="large-paragraph white-text medium-font">99.9% Uptime</div>
-                        <p className="small-paragraph">Enterprise-grade audio infra built.</p>
+                        <div className="large-paragraph white-text medium-font">Compliance</div>
+                        <p className="small-paragraph">Fully SOC 2, HIPAA & PCI-ready for regulated</p>
                     </div>
                 </div>
             </div>
@@ -210,7 +215,7 @@ const WhyChooseUs: React.FC<{}> = () => {
                 </div>
             </div>
 
-            <div className='relative'>
+            {/* <div className='relative'>
                 <div style={{
                     opacity: ".5",
                     pointerEvents: "none",
@@ -242,8 +247,7 @@ const WhyChooseUs: React.FC<{}> = () => {
                 }}>
 
                 </div>
-
-            </div>
+            </div> */}
         </div >
     )
 }

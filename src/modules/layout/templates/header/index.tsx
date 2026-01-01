@@ -17,15 +17,15 @@ const Header: React.FC<HeaderProps> = () => {
         },
         {
             name: "About",
-            link: "/about"
+            link: "/"
         },
         {
-            name: "Solutions",
-            link: "/solutions"
+            name: "Services",
+            link: "/"
         },
         {
-            name: "Landing",
-            link: "/landing"
+            name: "Contact",
+            link: "/"
         }
     ];
 

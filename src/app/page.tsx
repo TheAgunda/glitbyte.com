@@ -22,8 +22,9 @@ export default function Home() {
       <Header />
       {/* <Starfield /> */}
       <div className="relative  w-full">
-        <HeroBackground />
-        {/* <img src="/svg/looper-bg.svg" className="absolute rotate-[196deg] -top-20 right-19" /> */}
+        {/* <HeroBackground /> */}
+         <img src="/images/full-stars-space.png" className="absolute -z-10 -top-10" />
+        {/* <img src="/images/full-stars-space.png" className="absolute rotate-[196deg] -top-20 right-19" /> */}
       </div>
       <div className="container mx-auto" >
         <Hero />
