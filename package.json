@@ -13,7 +13,7 @@
     "clsx": "^2.1.1",
     "fix-react2shell-next": "^1.1.4",
     "framer-motion": "^12.23.12",
-    "next": "^15.3.3",
+    "next": "15.3.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "swiper": "^12.0.2",
