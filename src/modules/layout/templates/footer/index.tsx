@@ -1,5 +1,6 @@
 import { APP } from "@/lib/constants";
 import Logo from "@/modules/common/components/logo";
+import Link from "next/link";
 const Footer: React.FC<{}> = () => {
     return (
         <>
@@ -214,7 +215,7 @@ const Footer: React.FC<{}> = () => {
                                 <a className="text-xs font-normal text-brand-9">Privacy Policy</a>
                             </div>
                             <ul className="flex gap-3 mt-3 sm:mt-0">
-                                <li className="text-brand-9 flex justify-center items-center">
+                                {/* <li className="text-brand-9 flex justify-center items-center">
                                     <a href="https://www.linkedin.com/company/github" className="currentCurrent" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to Linkedin&quot;,&quot;label&quot;:&quot;text:linkedin&quot;}">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18" aria-hidden="true" className="d-block" width="19" height="18"><path d="M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z" fill="currentColor"></path></svg>
                                         <span className="sr-only">GitHub on LinkedIn</span>
@@ -249,12 +250,14 @@ const Footer: React.FC<{}> = () => {
                                         <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" aria-hidden="true" className="d-block" width="18" height="18"><title>Twitch</title><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" fill="currentColor"></path></svg>
                                         <span className="sr-only">GitHub on Twitch</span>
                                     </a>
-                                </li>
+                                </li> */}
                                 <li className="text-brand-9 flex justify-center items-center">
-                                    <a href="https://github.com/github" className="currentCurrent" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to github's org&quot;,&quot;label&quot;:&quot;text:github&quot;}">
+                                    <Link href={APP.SOCIALS.GITHUB} target="_blank"
+                                        className="currentCurrent"
+                                    >
                                         <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 16 16" width="20" aria-hidden="true" className="d-block"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-                                        <span className="sr-only">GitHub’s organization on GitHub</span>
-                                    </a>
+                                        <span className="sr-only">{APP.NAME} on GitHub</span>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

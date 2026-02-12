@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { animate } from "animejs";
 const About: React.FC<{}> = () => {
     useEffect(() => {
-
         animate(
             ".mars",
             {
@@ -61,7 +60,7 @@ const About: React.FC<{}> = () => {
                     viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.3 }}
                     className="flex justify-end">
                     <div className="about-image-div relative">
-                        <img src="/images/mars-2.png" alt="About Image" className="about-image mars w-140" />
+                        <img src="/images/mars.webp" alt="About Image" className="about-image mars w-140" />
                     </div>
                 </motion.div>
             </div>

@@ -150,8 +150,18 @@ body {
   @apply text-sm text-[#9095a4]
 }
 
+@utility contact-form-label {
+  @apply block mb-0.5 text-xs text-gray-600 dark:text-gray-200
+}
 @utility contact-form-input {
-  @apply w-full px-5 py-3 mt-2 text-white placeholder-white/60 bg-[#101010] border border-[#e3e3fe14] rounded-lg focus:border-primary focus:ring-primary/50 focus:outline-none focus:ring
+  @apply w-full px-5 py-3 mt-1 text-white placeholder-white/60 bg-[#101010] border border-[#e3e3fe14] rounded-lg focus:border-primary focus:ring-primary/50 focus:outline-none focus:ring
+}
+@utility contact-form-select {
+  @apply w-full px-5 py-3 mt-1 text-white bg-[#101010] 
+  border border-[#e3e3fe14] rounded-lg 
+  focus:border-primary focus:ring-primary/50 
+  focus:outline-none focus:ring 
+  appearance-none cursor-pointer;
 }
 
 
