@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import {
   Syne, Titillium_Web, Gugi
 } from "next/font/google";
+import Script from "next/script";
+import { Toaster } from "react-hot-toast";
 import "@/styles/globals.css";
 const titilliumWeb = Titillium_Web({
   weight: ["200", "300", "400", "600", "700", "900"],
@@ -60,8 +62,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preconnect"
+          href="https://challenges.cloudflare.com"
+        />
+      </head>
       <body className={`${titilliumWeb.variable} ${sync.variable} ${gugi.variable} antialiased`}  >
         {children}
+        <Toaster  toastOptions={{
+          position: 'top-right',
+          duration: 5000
+        }} />
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html >
   );

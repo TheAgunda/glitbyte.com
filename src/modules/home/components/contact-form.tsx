@@ -1,6 +1,47 @@
+"use client";
 import { APP } from "@/lib/constants";
 import Link from "next/link";
-const ContactForm: React.FC<{}> = () => {
+import { useState } from "react";
+import { toast } from "react-hot-toast";
+export default function ContactForm() {
+    const [loading, setLoading] = useState(false);
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setLoading(true);
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        // const token = (window as any).turnstile?.getResponse();
+
+        const data = {
+            fullName: formData.get("fullName"),
+            phone: formData.get("phone"),
+            company: formData.get("company"),
+            email: formData.get("email"),
+            service: formData.get("service"),
+            budget: formData.get("budget"),
+            details: formData.get("details"),
+            // token,
+        };
+
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+            const referenceId = (await res.json()).referenceId
+            toast.success("Message sent!");
+            form.reset();
+           //(window as any).turnstile.reset();
+        } else {
+            toast.error("Something went wrong.");
+        }
+        setLoading(false);
+    }
     return (
         <section className="x">
             <div className="container px-6 py-12 mx-auto">
@@ -76,29 +117,29 @@ const ContactForm: React.FC<{}> = () => {
                             <h1 className="text-lg font-medium text-white w-sm">
                                 Transforming ideas into solutions with AI and tech expertise.
                             </h1>
-                            <form className="mt-6">
+                            <form className="mt-6" onSubmit={handleSubmit}>
                                 <div className="flex-1">
                                     <label className="contact-form-label">Full Name</label>
-                                    <input type="text" placeholder="Ex. john doe" className="contact-form-input " />
+                                    <input type="text" placeholder="John Doe" className="contact-form-input" name="fullName" required />
                                 </div>
-                                 <div className="flex-1 mt-6">
+                                <div className="flex-1 mt-6">
                                     <label className="contact-form-label">Contact Number</label>
-                                    <input type="text" placeholder="Ex. john doe" className="contact-form-input " />
+                                    <input type="text" placeholder="+1 234 567 890" className="contact-form-input" name="phone" required />
                                 </div>
                                 <div className="flex gap-6 mt-6">
                                     <div className="flex-1">
                                         <label className="contact-form-label">Company Name</label>
-                                        <input type="text" placeholder="Company name" className="contact-form-input " />
+                                        <input type="text" placeholder="Cloud Nexus" className="contact-form-input" name="company" required />
                                     </div>
                                     <div className="flex-1 ">
                                         <label className="contact-form-label">Email Address</label>
-                                        <input type="email" placeholder="johndoe@example.com" className="contact-form-input" />
+                                        <input type="email" placeholder="johndoe@example.com" className="contact-form-input" name="email" required />
                                     </div>
                                 </div>
                                 <div className="flex gap-6 mt-6 ">
                                     <div className="flex-1">
-                                        <label className="contact-form-label">Service required*</label>
-                                        <select className="contact-form-select">
+                                        <label className="contact-form-label">Service Required</label>
+                                        <select className="contact-form-select" name="service" required>
                                             <option value="">Select Your Service</option>
                                             <option value="UI/UX Design">UI/UX Design</option>
                                             <option value="Mobile App Development">Mobile App Development</option>
@@ -110,8 +151,8 @@ const ContactForm: React.FC<{}> = () => {
                                         </select>
                                     </div>
                                     <div className="flex-1">
-                                        <label className="contact-form-label">Project budget *</label>
-                                        <select className="contact-form-select">
+                                        <label className="contact-form-label">Project Budget</label>
+                                        <select className="contact-form-select" name="budget" required>
                                             <option value="">Select Your Range</option>
                                             <option value="$500 - $1000">$500 - $1000</option>
                                             <option value="$1000 - $1500">$1000 - $1500</option><option value="Up to $2000">Up to $2000</option>
@@ -119,11 +160,18 @@ const ContactForm: React.FC<{}> = () => {
                                     </div>
                                 </div>
                                 <div className="w-full mt-6">
-                                    <label className="contact-form-label">Project details*</label>
-                                    <textarea className="h-32 contact-form-input md:h-48" placeholder="Tell us more about your idea"></textarea>
+                                    <label className="contact-form-label">Project Details</label>
+                                    <textarea className="h-32 contact-form-input md:h-48" placeholder="Tell us more about your idea" name="details" required>
+                                    </textarea>
                                 </div>
-                                <button className="w-full px-6 py-4 mt-6 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-full hover:bg-primary focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50">
-                                    get in touch
+                                <div
+                                    className="cf-turnstile flex justify-start mt-3"
+                                    data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                                    data-theme="light"
+                                    data-size="normal"
+                                /> 
+                                <button disabled={loading} className="w-full px-6 py-4 mt-6 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-full hover:bg-primary focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50">
+                                    {loading ? <span className="ml-2 loader">Loading...</span> : "Send Message"}
                                 </button>
                             </form>
                         </div>
@@ -133,4 +181,3 @@ const ContactForm: React.FC<{}> = () => {
         </section>
     )
 }
-export default ContactForm;
