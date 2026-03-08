@@ -38,7 +38,7 @@ const CaseStudies: React.FC<{}> = () => {
                 <h2 className="h2">
                     Case Studies & Insights
                 </h2>
-                <p className="text-secondary text-base max-w-3xl">
+                <p className="text-secondary max-w-3xl paragraph">
                     we partner with ambitious teams to solve real problems, ship better products, and drive lasting results.
                 </p>
             </div>

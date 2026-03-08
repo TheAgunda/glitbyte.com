@@ -8,7 +8,7 @@ const FAQs: React.FC<{}> = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-0 my-30">
             <div className="flex flex-col gap-6">
                 <h2 className="h2 max-w-sm">Frequently Asked Questions</h2>
-                <p className="text-secondary text-lg max-w-[400px]">
+                <p className="text-secondary max-w-[400px] paragraph">
                     We’ve heard it all. Here’s everything you need to know before working with us.
                 </p>
             </div>

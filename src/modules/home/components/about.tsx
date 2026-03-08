@@ -21,33 +21,33 @@ const About: React.FC<{}> = () => {
     }, [])
     return (
         <div className="mb-10">
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row">
                 <motion.div
                     variants={fadeIn('right', 0.3)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.3 }}
                     className="flex flex-col justify-center items-start max-w-[720px]"
                 >
                     <h2 className="h4 text-secondary pb-3 relative">
-                        Why Choose <span className="text-primary text-4xl">{APP.NAME}</span>
+                        Why Choose <span className="text-primary sm:text-4xl text-2xl">{APP.NAME}</span>
                         <Abstract />
                     </h2>
                     <p className="font-semibold mb-5 h2">AI-First. Quality-Driven. Business-Focused.</p>
-                    <p className="text-secondary">
+                    <p className="text-secondary paragraph">
                         We combine artificial intelligence, industry best practices, and deep engineering expertise to create digital solutions that are secure, scalable, and built to last.
                     </p>
-                    <ul className="mt-5">
-                        <li>
+                    <ul className="mt-5 ul">
+                        <li className="li">
                             AI-enhanced development workflows
                         </li>
-                        <li>
+                        <li className="li"> 
                             Clean, maintainable, and scalable code
                         </li>
-                        <li>
+                        <li className="li">
                             Agile & DevOps best practices
                         </li>
-                        <li>
+                        <li className="li">
                             Security and performance by design
                         </li>
-                        <li>
+                        <li className="li">
                             Transparent communication & delivery
                         </li>
                     </ul>

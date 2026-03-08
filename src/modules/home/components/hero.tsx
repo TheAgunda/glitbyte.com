@@ -17,7 +17,7 @@ const Hero: React.FC<{}> = () => {
                     variants={fadeIn('up', 0.3)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }}
                 >
                     <Heading className="text-white text-center" >
-                        Build Intelligent Digital Products with <span className="text-primary text-5xl md:text-6xl">AI-Driven Excellence</span>
+                        Build Intelligent Digital Products with <span className="text-primary">AI-Driven Excellence</span>
                     </Heading>
                 </motion.div>
                 <motion.p variants={fadeIn('up', 0.5)} initial="hidden" whileInView={'show'} viewport={{ once: APP_SETTINGS.animationOnce, amount: 0.7 }} className="paragraph text-secondary max-w-4xl text-center">

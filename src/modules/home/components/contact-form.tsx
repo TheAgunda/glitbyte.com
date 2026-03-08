@@ -3,9 +3,19 @@ import { APP } from "@/lib/constants";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import Script from "next/script";
+import { useRef } from "react";
+import { useEffect } from "react";
 export default function ContactForm() {
     const [loading, setLoading] = useState(false);
-
+    const ref = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (window?.turnstile && ref.current) {
+            window?.turnstile.render(ref.current, {
+                sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!,
+            });
+        }
+    }, []);
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setLoading(true);
@@ -36,7 +46,7 @@ export default function ContactForm() {
             const referenceId = (await res.json()).referenceId
             toast.success("Message sent!");
             form.reset();
-           //(window as any).turnstile.reset();
+            //(window as any).turnstile.reset();
         } else {
             toast.error("Something went wrong.");
         }
@@ -47,11 +57,11 @@ export default function ContactForm() {
             <div className="container px-6 py-12 mx-auto">
                 <div className="lg:flex lg:items-center lg:-mx-6">
                     <div className="lg:w-1/2 lg:mx-6">
-                        <h1 className="text-6xl font-normal text-gray-800 capitalize dark:text-white font-sync">
-                            <span className="text-5xl">Let's get the</span><br />
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-gray-800 capitalize dark:text-white font-sync">
+                            <span className="text-3xl md:text-4xl lg:text-5xl">Let's get the</span><br />
                             <span className="text-primary">conversation going</span>
                         </h1>
-                        <p className="text-secondary">
+                        <p className="text-secondary paragraph">
                             Discover how {APP.NAME} empowers your business to run efficiently, grow strategically, stay secure, and connect seamlessly — all with unmatched confidence.
                         </p>
                         <div className="mt-6 space-y-8 md:mt-8">
@@ -164,12 +174,18 @@ export default function ContactForm() {
                                     <textarea className="h-32 contact-form-input md:h-48" placeholder="Tell us more about your idea" name="details" required>
                                     </textarea>
                                 </div>
+                                  <Script
+                                    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+                                    strategy="afterInteractive"
+                                />
                                 <div
                                     className="cf-turnstile flex justify-start mt-3"
                                     data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
                                     data-theme="light"
                                     data-size="normal"
-                                /> 
+                                />
+                                   <div ref={ref} />
+                              
                                 <button disabled={loading} className="w-full px-6 py-4 mt-6 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-full hover:bg-primary focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50">
                                     {loading ? <span className="ml-2 loader">Loading...</span> : "Send Message"}
                                 </button>

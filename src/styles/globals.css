@@ -92,29 +92,36 @@ body {
   @apply flex text-brand-9 hover:text-brand-11 text-sm font-normal font-nunito
 }
 
-
-@utility h1 {
-  @apply font-bold font-sync text-6xl
+@utility paragraph {
+  @apply sm:text-base text-sm  font-nunito font-normal text-[#ffffffb3] tracking-normal
 }
 
-@utility paragraph {
-  @apply text-base font-nunito font-normal text-[#ffffffb3]
+@utility ul {
+    @apply sm:text-base text-sm font-nunito font-normal text-[#ffffffb3] tracking-normal
+}
+
+@utility  li {
+   @apply mb-1
+}
+
+@utility h1 {
+  @apply font-sync text-4xl md:text-5xl lg:text-6xl font-bold
 }
 
 @utility h2 {
-  @apply font-bold font-sync text-5xl
+  @apply font-sync text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold
 }
 
 @utility h4 {
-  @apply font-semibold font-sync text-2xl
+  @apply font-sync text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold
 }
 
 @utility h5 {
-  @apply font-semibold font-sync text-xl
+  @applyfont-sync text-base sm:text-lg md:text-xl lg:text-2xl font-medium
 }
 
 @utility h6 {
-  @apply font-bold font-sync text-lg
+  @apply font-sync text-sm sm:text-base md:text-lg lg:text-xl font-medium
 }
 
 @utility service-card {
@@ -376,7 +383,7 @@ body {
 
 /********** Work  *************************************************************************/
 @utility our-work-tab-wrapper {
-  @apply border-t border-[#ffffff1a] mt-20 flex items-start
+  @apply border-t border-[#ffffff1a] mt-20  items-start grid grid-cols-1 sm:grid-cols-3
 }
 
 @utility our-work-sticky-tab-menu {
@@ -400,7 +407,7 @@ body {
 }
 
 @utility h3-heading {
-  @apply my-0 text-4xl font-normal text-white
+  @apply my-0  font-normal text-white text-2xl sm:text-4xl
 }
 
 @utility work-label-div {
@@ -411,10 +418,16 @@ body {
   @apply text-sm font-normal tracking-[1.2px] mb-0 text-[#ffffffb3]
 }
 
+
 .small-paragraph.work-label-text {
   background-color: #ffffff0d;
   border-radius: 100px;
   padding: 12px 16px;
+}
+@media screen and (max-width: 479px) {
+    .small-paragraph.work-label-text {
+        padding: 10px 14px;
+    }
 }
 
 .small-paragraph.work-label-text:hover {

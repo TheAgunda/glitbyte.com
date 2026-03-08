@@ -140,7 +140,7 @@ const Services: React.FC<{}> = () => {
                         <h2 className="h2">
                             Our Core Services
                         </h2>
-                        <p className="text-secondary text-base max-w-3xl">We deliver a full range of digital solutions, from mobile and web development to custom software and desktop applications, built with modern technologies for performance, scalability, and security.</p>
+                        <p className="text-secondary max-w-3xl paragraph">We deliver a full range of digital solutions, from mobile and web development to custom software and desktop applications, built with modern technologies for performance, scalability, and security.</p>
                     </div>
                     <div className='hidden sm:flex gap-2'>
                         <PrevSliderButton onClick={() => swiperRef?.current?.slidePrev()} />

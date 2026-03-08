@@ -21,8 +21,7 @@ export async function POST(req: NextRequest) {
     // --- Capture Client IP ---
     const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || "";
     // 1️⃣ Verify Turnstile
-    const verifyRes = await fetch(
-        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify",
         {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
